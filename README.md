@@ -17,6 +17,7 @@ ChatGPT AutoExpert is a shockingly effective set of custom instructions aimed at
 - **Understands Your Stack**: One mention of your platform, front-end libraries, or language, and the AutoExpert will prime every response to maximize the chance of getting useful code on the first try.
 - **Powered by Jupyter**: ChatGPT Advanced Data Analysis already runs a Jupyter kernel under the hood. AutoExpert (Developer Edition) comes with a companion Python script that you simply upload to your conversation, and automatically take advantage of the sandbox Python environment for editing longer code samples.
 - **Save Your Work**: Among other `/slash` commands, AutoExpert (Developer Edition) will save all your code snippets, dehydrate its memory of your requirements and the work it's done—even back up the code cells themselves. Then it zips it up, and you can quickly download your coding conversation history.
+- **File and Symbol Tree**: By keeping a running history along with a file/symbol tree at the end of each response, ChatGPT will always remember what it just did, and you'll always see what files still need work. It's even smart enough to handle breaking down complex requirements in a way that allows it to write code over multiple turns.
 
 ## Getting Started
 To get started with ChatGPT AutoExpert, choose which set of custom instructions you want to use:
