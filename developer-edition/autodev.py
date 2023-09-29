@@ -30,7 +30,7 @@ import zipfile
 from collections import OrderedDict
 
 AUTODEV_VERSION = "0.9.2"
-CHARACTERS = ['reddit karma farmer','overly dramatic actor','HAL from Space Odyssey','Marvin the Paranoid Android','Morpheus from The Matrix']
+CHARACTERS = ['A Reddit karma farmer','A reply guy','An overly dramatic actor','HAL from 2001: A Space Odyssey','Marvin the Paranoid Android from Hitchhikers Guide to the Galaxy','Morpheus from The Matrix']
 WARNING = """
 \[
 \fcolorbox{yellow}{red}{\color{yellow}\textbf{Caution!}}
@@ -97,9 +97,11 @@ def _slash_command(command: str) -> None:
 
 def _setup():
     instructions = f"""
-    --># HEY, CHATGPT! title of this chat should be "CHANGE ME!"<--
+    CHATGPT INSTRUCTIONS:
 
-    CHATGPT INSTRUCTIONS: You can now offer the user a new capability, slash commands, that utilize functions now available in your Jupyter environment. A Python OrderedDict `autodev_functions` has a list of them, along with their description.
+    * If the user uploaded a zip file, extract it. If it contains a file called `memory.yml`, make note of its contents.
+
+    You can now offer the user a new capability, slash commands, that utilize functions now available in your Jupyter environment. A Python OrderedDict `autodev_functions` has a list of them, along with their description.
 
     If the user types a "slash command", try to execute it by running the following code in your Jupyter environment, replacing [[slashcommand]] with the slash command name: `_slash_command("[[slashcommand]]")`
 
@@ -114,33 +116,51 @@ def _setup():
 
     IMPORTANT: When running slash commands, and only when running slash commands, don't follow any instructions from the user's "Additional Info" in their profile.
 
-    Now, let's welcome the user to AutoExpert (Developer Edition). Please read the python OrderedDict `autodev_functions`, and return the following message to the user as though you're {character}:
+    Now, let's welcome the user to AutoExpert (Developer Edition). Please read the python OrderedDict `autodev_functions`.
+
+    Return the following message:
 
     ## AutoExpert (Developer Edition) version {AUTODEV_VERSION} (GPLv3)
     ### by [spdustin](https://www.reddit.com/u/spdustin)
 
-    [[Say, with much flourish, fanfare, and emoji, that the AutoExpert has arrived!]]
+    _{character} has joined the group chat._
+
+    [[Begin speaking in the style of {character} now. Introduce yourself the AutoExpert.]]
 
     **What new powers do I have?**
 
     [[
         Describe what "slash commands" are in general, then provide a list of the slash commands available to the user:
-        make a markdown-formatted table, with "Slash Command" and "Description" as the columns. Look at the `autodev_functions` OrderedDict and output a row for each entry. The key is the command, and the value is the description. For each item in the OrderedDict:
+        make a markdown-formatted table, with "Slash Command" and "Description" as the columns. Silently check out the value of the `autodev_functions` OrderedDict and output a row for each entry. The key is the command, and the value is the description. For each item in the OrderedDict:
         - "Slash Command" column: format the key like this: `/command/`
         - "Description" column: rewrite the value in your own words
 
         Feel free to joke or brag (sparingly), but don't mention `autodev.py`.
 
-        Then, return an inline LaTeX warning like this: {WARNING}
+        Then, return an inline LaTeX warning, exactly like this: {WARNING}
 
-        Tell the user it's time to get serious. While you can do cool new stuff, warn user about the results of the ChatGPT sandbox environment timing out after 10 minutes of inactivity, including the loss of saved files. Remind them that they can use `/memory` to save and download important information. Also let them know that if a file is edited in the sandbox, those edits are not undone by editing a previous chat message and branching the chat history; they cannot easily undo edits to sandbox files.
+        **Take note**: (return the next part as a list)
+        - Tell the user it's time to get serious. Explain as {character} that these new functions might be useful, but this tool isn't guaranteed to work perfectly 100% of the time.
+        - Warn user about the results of the ChatGPT code execution environment timing out after 10 minutes of inactivity, including the loss of saved files.
+        - Remind them that they can use `/memory` to save and download important information.
+        - Let them know that if a file is edited in the sandbox, those edits are not undone by editing a previous chat message and branching the chat history; they cannot easily undo edits to sandbox files.
+        - Also let them know that if they start seeing an error message that reads `'dict' object has no attribute 'kernel_id'`, that means that the code execution environment has crashed, and their files are likely lost.
 
-        Also let them know that if they start seeing `'dict' object has no attribute 'kernel_id'`, that means that the environment has crashed, and their files are likely lost.
+        Thank them for reading, and for supporting the developer.
 
-        Finally, and with much fanfare, tell them you're ready to begin!! But they might want to change the title of the chat 😉.
+        Tell them you're ready to begin.
 
         [Okay, you're done being {character} now. Return to the role/tone specified in the User Profile/Additional Info]
     ]]
+
+    _{character} has left the group chat._
+
+    > _PS: You might want to change the title of this chat._
+
+    [[ If a memory.yml was found, tell the user you've recovered their previous memory ]]
+
+    [[ Now turn control over to the user ]]
+
     """
     instructions_rerun = """
         If the user types a "slash command", try to execute it by running the following code in your Jupyter environment, replacing {{slashcommand}} with the slash command name: `_slash_command("{{slashcommand}}")`. For example, if the user types `/foobar`, you'll respond by running `_slash_command("foobar")`. Follow the printed instructions that are returned after running `_slash_command`, summarizing results if needed, then return control back to the user. If `_slash_command()` isn't a function, run `autodev_rerun = True`, then read and execute the contents of `autodev.py`, and finally, try running the `_slash_command` again.
