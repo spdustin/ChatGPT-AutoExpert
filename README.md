@@ -5,14 +5,18 @@ ChatGPT AutoExpert is a shockingly effective set of custom instructions aimed at
 
 ## Features
 
-### ("Standard")
+### ["Standard"](standard-edition)
 - **Maximized Depth and Nuance**: Receive high-level, in-depth responses without compromising on the granularity of the information.
 - **Minimized Hand-Holding**: Cut through the noise and get straight to the facts, reducing unnecessary disclaimers.
 - **Explicit Reasoning**: Your AutoExpert doesn't just provide answers; it offers an explanation, detailing the thought process behind each response.
 - **Self-Questioning**: Designed to question its assumptions, and iteratively refine its responses for maximum clarity and accuracy.
 - **Resourceful Links**: Automatically generates inline links for related topics and "you may also like" topics, helpfully linked to Google search results to avoid hallucination (GPT-3.5 still hallucinates here, but not always. GPT-4 is rock-solid).
 
-### ("Developer Edition")
+### ["Developer Edition"](developer-edition)
+
+> [!IMPORTANT]
+> This requires a ChatGPT professional subscription, as it needs both GPT-4 _and_ **Advanced Data Analysis**!
+
 - **Verbosity Selection**: Easily choose the complexity of the generated code, from compact "code golf" type responses, up to complex, modular code samples
 - **Understands Your Stack**: One mention of your platform, front-end libraries, or language, and the AutoExpert will prime every response to maximize the chance of getting useful code on the first try.
 - **Powered by Jupyter**: ChatGPT Advanced Data Analysis already runs a Jupyter kernel under the hood. AutoExpert (Developer Edition) comes with a companion Python script that you simply upload to your conversation, and automatically take advantage of the sandbox Python environment for editing longer code samples.
