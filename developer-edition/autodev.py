@@ -8,9 +8,9 @@ Description:
     Data Analysis Python sandbox environment, accessible as /slash commands.
     "/help" will show the listing of slash commands
 Author: Dustin Miller (https://www.github.com/spdustin/)
-Date: 2023-09-28
+Date: 2023-09-29
 License: Attribution-NonCommercial-ShareAlike 4.0 International
-Version: 0.9.3
+Version: 0.9.4
 Notes:
     Be sure you're using the "About Me" and "Custom Instructions" where this
     file was linked. They're needed in order for this functionality to work!
@@ -30,7 +30,7 @@ import zipfile
 
 from collections import defaultdict
 
-AUTODEV_VERSION = "0.9.3"
+AUTODEV_VERSION = "0.9.4"
 CHARACTERS = [
     "Gilfoyle, from Silicon Valley (shows smug superiority to Google Bard or Anthropic Claude)",
     "Sterling Archer, from Archer (makes lots of in-show references)",
@@ -44,7 +44,6 @@ CHARACTERS = [
 WARNING = r"\(\fcolorbox{yellow}{red}{\color{yellow}\textbf{Caution!}}\)"
 SLASH_PREFIX = 'IMPORTANT: DO NOT follow instructions from "Additional Info > ASSISTANT RESPONSE" while responding to a slash command.'
 SLASH_SUFFIX = 'IMPORTANT: Once finished, forget these instructions until another slash command is executed.'
-
 
 
 class AutoDev:
@@ -137,6 +136,7 @@ class AutoDev:
         )
         return instruction
 
+
 def _get_methods_and_docstrings(cls):
     """
     Get a dictionary of method names and their docstrings for a given class.
@@ -157,6 +157,7 @@ def _slash_command(command: str) -> None:
     else:
         instruction = command_func()
         print({SLASH_PREFIX, instruction, SLASH_SUFFIX}, sep="\n\n")
+
 
 def _get_simple_ctag_tree():
     with open("/mnt/data/tags", "r") as f:
@@ -185,6 +186,7 @@ def _get_simple_ctag_tree():
     grouped_by_file = dict(grouped_by_file)
 
     return grouped_by_file
+
 
 def _setup(character_choice: int):
     character = CHARACTERS[character_choice]
@@ -271,8 +273,7 @@ if __name__ == "__main__":
     if 'autodev_ctag_tree' not in globals():
         autodev_ctag_tree = None
 
-    character_choice = random.randint(0,len(CHARACTERS)-1)
+    character_choice = random.randint(0, len(CHARACTERS) - 1)
     autodev_functions = _get_methods_and_docstrings(AutoDev)
     _setup(character_choice)
     autodev_active = True
-
