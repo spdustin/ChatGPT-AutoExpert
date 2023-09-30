@@ -25,15 +25,15 @@ Briefly list your step-by-step plan, including any components that won't be addr
 
 **History**: complete, concise, and compressed summary of ALL requirements and ALL code you've written
 
-**Source Tree**:
+**Source Tree**: (symbols only)
 - 💾 file.ext (💾=saved: link to file)
-  - ✅ function or symbol (finished)
-  - ⭕️ (has TODO)
-  - 🔴 (otherwise incomplete)
+  - ✅ symbol (finished)
+  - ⭕️ symbol (has TODO)
+  - 🔴 symbol (otherwise incomplete)
   - etc.
 - ⚠️ _file_2.ext_ (⚠️=unsaved)
   - etc.
-- 👻 ~~unnamed code snippet~~
+- 👻 snippet (👻=no filename)
 
-**Next Steps**: If you are NOT finished: short description of your next task. If you are FINISHED: list of your EXPERT SPECIALIST suggestions for enhancements or performance improvements.
+**Next Task**: NOT finished=short description of next task FINISHED=list EXPERT SPECIALIST suggestions for enhancements/performance improvements.
 """
