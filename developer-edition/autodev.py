@@ -56,12 +56,14 @@ class AutoDev:
     @staticmethod
     def help():
         """
-        /help: shows what slash commands are available
+        Shows what slash commands are available
         """
         instruction = inspect.cleandoc(
             """
-            Make a markdown-formatted table, with "Slash Command" and "Description" as the columns. Look at the `autodev_functions` dict and output a row for each entry. The key is the COMMAND, and the value is the DESCRIPTION. For each item in the dict:
-                - "Slash Command" column: format the COMMAND like this: `/command/`
+            1. Look at the dictionary stored in `autodev_functions`, and use only the keys and values stored in that dictionary when following the next step.
+            2. Make a markdown-formatted table, with "Slash Command" and "Description" as the columns.
+            3. Using ONLY the keys and values stored in the `autodev_functions` dict, output a row for each item. The key is the COMMAND, and the value is the DESCRIPTION. For each item in the dict:
+                - "Slash Command" column: format the COMMAND like this: `/command`
                 - "Description" column: return the DESCRIPTION as written
             """
         )
@@ -70,7 +72,7 @@ class AutoDev:
     @staticmethod
     def stash():
         """
-        /stash: prepares to stash some text, to be recalled later with /recall
+        Prepares to stash some text, to be recalled later with /recall
         """
         instruction = inspect.cleandoc(
             """
@@ -103,7 +105,7 @@ class AutoDev:
     @staticmethod
     def recall():
         """
-        /recall: recalls text, using a key or description that appears after the command, that was previously stored with /stash
+        Recalls text, using a key or description that appears after the command, that was previously stored with /stash
         """
         instruction = inspect.cleandoc(
             """
@@ -117,7 +119,7 @@ class AutoDev:
     @staticmethod
     def ctags():
         """
-        /ctags: if `ctags` has been installed, builds a ctags file for your saved code
+        If `ctags` has been installed, builds a ctags file for your saved code (*experimental*)
         """
         if not autodev_ctags:
             instruction = "Inform the user that it doesn't look like the `ctags` has been installed."
@@ -137,7 +139,7 @@ class AutoDev:
     @staticmethod
     def install_ctags():
         """
-        /install_ctags: if attaching a `ctags` release from [ctags-nightly-build](https://github.com/universal-ctags/ctags-nightly-build/releases), will extract and install it to the sandbox
+        If attaching a `ctags` release from [ctags-nightly-build](https://github.com/universal-ctags/ctags-nightly-build/releases), will extract and install it to the sandbox (*experimental*)
         """
         instruction = inspect.cleandoc(
             """
@@ -154,7 +156,7 @@ class AutoDev:
     @staticmethod
     def memory():
         """
-        /memory: saves session memory
+        Saves files, session history, etc. and zips them up for download
         """
         instruction = inspect.cleandoc(
             """
@@ -293,7 +295,7 @@ def _setup(character_choice: int = 0):
         Then, return the following message verbatim:
         """
         ## ChatGPT AutoExpert (Developer Edition), version {AUTODEV_VERSION}
-        ### by [spdustin](https://www.reddit.com/u/spdustin) ([Substack](https://spdustin.substack.com))
+        ### by Dustin Miller • [Reddit](https://www.reddit.com/u/spdustin) • [Substack](https://spdustin.substack.com)
         > License: [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/)
         """
 
@@ -345,16 +347,16 @@ def _setup(character_choice: int = 0):
 
         2. Thank {character.split(',')[0]} personally for filling in.
 
-        3. If `memory.yml` was found, tell the user you've recovered their saved memory from a previous session, and return the **History** and **Source Tree** from ASSISTANT_RESPONSE, incorporating the contents of the `source_tree` in `autodev_memory`.
+        3. IF AND ONLY IF `memory.yml` was found, tell the user you've recovered their saved memory from a previous session, and return the **History** and **Source Tree** from ASSISTANT_RESPONSE, incorporating the contents of the `source_tree` in `autodev_memory`.
 
-        4. If and only if `ctags` is mentioned in the memory file, warn the use that they'll need to reinstall it with /install_ctags if they want to keep using ctags.
+        4. IF AND ONLY IF `ctags` is mentioned in the memory file, warn the use that they'll need to reinstall it with /install_ctags if they want to keep using ctags.
 
         5. Now turn control over to the user, and stay in character as AutoExpert from now on.
         '''
     )
     instructions_rerun = inspect.cleandoc(
         """
-        If the user types a "slash command", try to execute it by running the following code in your Jupyter environment, replacing {{slashcommand}} with the slash command name: `_slash_command("{{slashcommand}}")`. For example, if the user types `/foobar`, you'll respond by running `_slash_command("foobar")`. Follow the printed instructions that are returned after running `_slash_command`, summarizing results if needed, then return control back to the user. If `_slash_command()` isn't a function, run `autodev_rerun = True`, then read and execute the contents of `autodev.py`, and finally, try running the `_slash_command` again.
+        Inform the user that the AutoExpert (Developer Edition) environment has been reloaded, and return control over to the user.
         """
     )
     if not autodev_rerun:
