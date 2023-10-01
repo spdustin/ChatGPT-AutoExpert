@@ -1,4 +1,7 @@
 # ChatGPT AutoExpert
+by Dustin Miller • [Reddit](https://www.reddit.com/u/spdustin) • [Substack](https://spdustin.substack.com)
+
+**License**: [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 _Elevating Conversational AI to Expert Level_
 
