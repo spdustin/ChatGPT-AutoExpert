@@ -1,14 +1,12 @@
 # ChatGPT AutoExpert (Developer Edition)
 by Dustin Miller • [Reddit](https://www.reddit.com/u/spdustin) • [Substack](https://spdustin.substack.com)
 
-> License: [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+**License**: [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 > [!IMPORTANT]
 > This requires a ChatGPT professional subscription, as it needs both GPT-4 _and_ **Advanced Data Analysis**!
 
 # Table of Contents
-- [ChatGPT AutoExpert (Developer Edition)](#chatgpt-autoexpert-developer-edition)
-- [Table of Contents](#table-of-contents)
 - [Usage](#usage)
   - [Verbosity](#verbosity)
   - [Slash Commands](#slash-commands)

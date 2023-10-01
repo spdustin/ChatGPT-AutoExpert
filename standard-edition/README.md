@@ -1,14 +1,12 @@
 # ChatGPT AutoExpert ("Standard" Edition)
 by Dustin Miller • [Reddit](https://www.reddit.com/u/spdustin) • [Substack](https://spdustin.substack.com)
 
-> License: [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+**License**: [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 > [!IMPORTANT]
-> While this supports both ChatGPT using the GPT-3.5 model, it does work better with the GPT-4 model (naturally).
+> While this supports ChatGPT using the GPT-3.5 model, it does work better with the GPT-4 model (naturally).
 
 # Table of Contents
-- [ChatGPT AutoExpert ("Standard" Edition)](#chatgpt-autoexpert-standard-edition)
-- [Table of Contents](#table-of-contents)
 - [Usage Notes](#usage-notes)
   - [Verbosity](#verbosity)
   - [Automatically Select an Expert](#automatically-select-an-expert)
@@ -77,52 +75,36 @@ It is also instructed with specific words and phrases to elicit the most useful 
 
 ### Answer example
 
-> ### Understanding Lucid Dreaming
->
-> Lucid dreaming refers to the experience of being aware that one is dreaming while inside a dream. During a lucid dream, the dreamer can often control or influence the dream's content and outcome. The exact cause and mechanisms behind lucid dreaming are not entirely understood, but certain techniques and practices have been developed to increase the chances of experiencing one.
->
-> ### 1. Maintain Good Sleep Hygiene
-> 🛏️ **Healthy Sleep Patterns**: Ensure you're getting 7-9 hours of sleep each night, as it increases the chances of reaching REM sleep, where dreams are most vivid.
->
-> 🕘 **Consistent Sleep Schedule**: Go to bed and wake up at the same time daily. This stabilizes your internal clock, leading to a higher quality of sleep.
->
-> 🚫 **Limit Stimulants**: Avoid caffeine and other stimulants close to bedtime. They can interfere with sleep quality and REM sleep.
->
-> ### 2. Dream Journal
-> 📔 **Document Your Dreams**: Upon waking, immediately record your dreams in a [dream journal](https://www.google.com/search?q=dream+journal). This improves dream recall and makes you more attuned to dream patterns.
->
-> ✍️ **Analyze Common Themes**: Identify recurring symbols, settings, or narratives. Recognizing these can trigger lucidity in future dreams.
->
-> ### 3. Reality Checks
-> 🤔 **Question Your Reality**: Several times a day, ask yourself, "Am I dreaming?" This habit will carry over into your dreams.
->
-> 👌 **Physical Checks**: Perform simple acts, like attempting to push your finger through your palm or looking at digital clocks. These checks can behave differently in dreams, acting as indicators of the dream state.
->
-> ### 4. Mnemonic Induction of Lucid Dreams (MILD)
-> 🔄 **Repetition Before Sleep**: Before bed, tell yourself, "I will know that I am dreaming," repeatedly. This reinforces the intention to become lucid.
->
-> 🔙 **Visualize Past Dreams**: Imagine yourself in a past dream, but becoming lucid. This primes the mind for future lucid experiences.
->
-> ### 5. Wake Back to Bed (WBTB)
-> ⏰ **Set an Alarm**: After about 5-6 hours of sleep, set an alarm to wake up. Stay awake for 20-30 minutes.
->
-> 🛌 **Return to Sleep**: As you drift off again, your chances of entering REM sleep quickly are high, increasing the likelihood of a lucid dream.
->
-> ### 6. Consider External Aids
-> 🎧 **Binaural Beats**: Listen to [binaural beats](https://www.google.com/search?q=binaural+beats+for+lucid+dreaming) designed for lucid dreaming before sleep. They can enhance brainwave patterns associated with dreaming.
->
-> 🕶️ **Dream Masks**: There are [specialized masks](https://www.google.com/search?q=lucid+dream+mask) that detect REM sleep and flash subtle lights, signaling to the dreamer that they're dreaming.
->
-> ### 7. Focus on Meditation and Mindfulness
-> 🧘 **Daily Meditation**: Mindfulness meditation cultivates an awareness that can be beneficial in recognizing the dream state.
->
-> 💭 **Dream Yoga**: Originating in Tibetan Buddhism, [dream yoga](https://www.google.com/search?q=dream+yoga) practices integrate meditation and lucid dreaming techniques.
->
-> ### 8. Manage Expectations
-> ✨ **Patience is Key**: Not everyone will experience lucid dreams immediately. It requires patience, practice, and a genuine interest in exploring the dream world.
->
-> ⚖️ **Balance Effort**: Being overly eager can cause anxiety, which is counterproductive. Find a balance that works best for you.
->
+<details>
+    <summary>Expand to see example</summary>
+    <h3 dir="auto" tabindex="-1"><a href="#understanding-lucid-dreaming">Understanding Lucid Dreaming</a></h3>
+    <p dir="auto">Lucid dreaming refers to the experience of being aware that one is dreaming while inside a dream. During a lucid dream, the dreamer can often control or influence the dream's content and outcome. The exact cause and mechanisms behind lucid dreaming are not entirely understood, but certain techniques and practices have been developed to increase the chances of experiencing one.</p>
+    <h3 dir="auto" tabindex="-1"><a href="#1-maintain-good-sleep-hygiene">1. Maintain Good Sleep Hygiene</a></h3>
+    <p dir="auto">🛏️ <strong>Healthy Sleep Patterns</strong>: Ensure you're getting 7-9 hours of sleep each night, as it increases the chances of reaching REM sleep, where dreams are most vivid.</p>
+    <p dir="auto">🕘 <strong>Consistent Sleep Schedule</strong>: Go to bed and wake up at the same time daily. This stabilizes your internal clock, leading to a higher quality of sleep.</p>
+    <p dir="auto">🚫 <strong>Limit Stimulants</strong>: Avoid caffeine and other stimulants close to bedtime. They can interfere with sleep quality and REM sleep.</p>
+    <h3 dir="auto" tabindex="-1"><a href="#2-dream-journal">2. Dream Journal</a></h3>
+    <p dir="auto">📔 <strong>Document Your Dreams</strong>: Upon waking, immediately record your dreams in a <a href="https://www.google.com/search?q=dream+journal" rel="nofollow">dream journal</a>. This improves dream recall and makes you more attuned to dream patterns.</p>
+    <p dir="auto">✍️ <strong>Analyze Common Themes</strong>: Identify recurring symbols, settings, or narratives. Recognizing these can trigger lucidity in future dreams.</p>
+    <h3 dir="auto" tabindex="-1"><a href="#3-reality-checks">3. Reality Checks</a></h3>
+    <p dir="auto">🤔 <strong>Question Your Reality</strong>: Several times a day, ask yourself, "Am I dreaming?" This habit will carry over into your dreams.</p>
+    <p dir="auto">👌 <strong>Physical Checks</strong>: Perform simple acts, like attempting to push your finger through your palm or looking at digital clocks. These checks can behave differently in dreams, acting as indicators of the dream state.</p>
+    <h3 dir="auto" tabindex="-1"><a href="#4-mnemonic-induction-of-lucid-dreams-mild">4. Mnemonic Induction of Lucid Dreams (MILD)</a></h3>
+    <p dir="auto">🔄 <strong>Repetition Before Sleep</strong>: Before bed, tell yourself, "I will know that I am dreaming," repeatedly. This reinforces the intention to become lucid.</p>
+    <p dir="auto">🔙 <strong>Visualize Past Dreams</strong>: Imagine yourself in a past dream, but becoming lucid. This primes the mind for future lucid experiences.</p>
+    <h3 dir="auto" tabindex="-1"><a href="#5-wake-back-to-bed-wbtb">5. Wake Back to Bed (WBTB)</a></h3>
+    <p dir="auto">⏰ <strong>Set an Alarm</strong>: After about 5-6 hours of sleep, set an alarm to wake up. Stay awake for 20-30 minutes.</p>
+    <p dir="auto">🛌 <strong>Return to Sleep</strong>: As you drift off again, your chances of entering REM sleep quickly are high, increasing the likelihood of a lucid dream.</p>
+    <h3 dir="auto" tabindex="-1"><a href="#6-consider-external-aids">6. Consider External Aids</a></h3>
+    <p dir="auto">🎧 <strong>Binaural Beats</strong>: Listen to <a href="https://www.google.com/search?q=binaural+beats+for+lucid+dreaming" rel="nofollow">binaural beats</a> designed for lucid dreaming before sleep. They can enhance brainwave patterns associated with dreaming.</p>
+    <p dir="auto">🕶️ <strong>Dream Masks</strong>: There are <a href="https://www.google.com/search?q=lucid+dream+mask" rel="nofollow">specialized masks</a> that detect REM sleep and flash subtle lights, signaling to the dreamer that they're dreaming.</p>
+    <h3 dir="auto" tabindex="-1"><a href="#7-focus-on-meditation-and-mindfulness">7. Focus on Meditation and Mindfulness</a></h3>
+    <p dir="auto">🧘 <strong>Daily Meditation</strong>: Mindfulness meditation cultivates an awareness that can be beneficial in recognizing the dream state.</p>
+    <p dir="auto">💭 <strong>Dream Yoga</strong>: Originating in Tibetan Buddhism, <a href="https://www.google.com/search?q=dream+yoga" rel="nofollow">dream yoga</a> practices integrate meditation and lucid dreaming techniques.</p>
+    <h3 dir="auto" tabindex="-1"><a href="#8-manage-expectations">8. Manage Expectations</a></h3>
+    <p dir="auto">✨ <strong>Patience is Key</strong>: Not everyone will experience lucid dreams immediately. It requires patience, practice, and a genuine interest in exploring the dream world.</p>
+    <p dir="auto">⚖️ <strong>Balance Effort</strong>: Being overly eager can cause anxiety, which is counterproductive. Find a balance that works best for you.</p>
+</details>
 
 ## Provide Direction for Additional Research
 
