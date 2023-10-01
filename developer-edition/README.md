@@ -83,7 +83,7 @@ The epilogue section at the end of each response keeps important things in memor
 > **History**: Provided a sample JavaScript file with two classes (`Calculator` and `AdvancedCalculator`) and their methods, along with two top-level functions (`add` and `subtract`).
 >
 > **Source Tree**:
-> - 👻 sample.js
+> - ⚠️ sample.js
 >   - 📦 Calculator
 >     - ✅ add
 >     - ✅ subtract
