@@ -123,17 +123,14 @@ After it's done answering your question, an epilogue section is created to sugge
 
 # Installation (one-time)
 ChatGPT AutoExpert ("Standard" Edition) is intended for use in the ChatGPT web interface, with or without a Pro subscription. To activate it, you'll need to do a few things!
-1. Download the [latest release](https://github.com/spdustin/ChatGPT-AutoExpert/releases/latest)
-    - Expand **Assets**, then download the file titled "**Source Code** (zip)"
-2. Extract the downloaded .zip file
-3. Sign in to [ChatGPT](https://chat.openai.com)
-4. Select the profile + ellipsis button in the lower-left of the screen to open the settings menu
-5. Select **Custom Instructions**
+1. Sign in to [ChatGPT](https://chat.openai.com)
+2. Select the profile + ellipsis button in the lower-left of the screen to open the settings menu
+3. Select **Custom Instructions**
     > [!WARNING]
     > You should save the contents of your existing custom instructions somewhere, because you're about to overwrite both text boxes!
-6. Copy and paste the text from [`standard-edition/chatgpt__about_me.md`](chatgpt__about_me.md) to the first text box, replacing whatever was there
+4. Copy and paste the text from [`standard-edition/chatgpt__about_me.md`](https://raw.githubusercontent.com/spdustin/ChatGPT-AutoExpert/main/standard-edition/chatgpt__about_me.md) to the first text box, replacing whatever was there
     > [!NOTE]
     > Check the **About Me** heading at the top of the text you just pasted in. Either add one or two lines about yourself (prefixed with `- ` as shown), or remove the first three lines (plus the blank line after it) altogether.
-7. Copy and paste the text from [`standard-edition/chatgpt__custom_instructions.md`](chatgpt__custom_instructions.md) to the second text box, replacing whatever was there
-8. Select the **Save** button in the lower right
-
+5. Copy and paste the text from [`standard-edition/chatgpt__custom_instructions.md`](https://raw.githubusercontent.com/spdustin/ChatGPT-AutoExpert/main/standard-edition/chatgpt__custom_instructions.md) to the second text box, replacing whatever was there
+6. Select the **Save** button in the lower right
+7. Try it out!

@@ -116,10 +116,10 @@ ChatGPT AutoExpert (Developer Edition) is intended for use in the ChatGPT web in
 5. Select **Custom Instructions**
     > [!WARNING]
     > You should save the contents of your existing custom instructions somewhere, because you're about to overwrite both text boxes!
-6. Copy and paste the text from [`developer-edition/chatgpt__about_me.md`](chatgpt__about_me.md) to the first text box, replacing whatever was there
-7. Copy and paste the text from [`developer-edition/chatgpt__custom_instructions.md`](chatgpt__custom_instructions.md) to the second text box, replacing whatever was there
+6. Copy and paste the text from [`developer-edition/chatgpt__about_me.md`](https://raw.githubusercontent.com/spdustin/ChatGPT-AutoExpert/main/developer-edition/chatgpt__about_me.md) to the first text box, replacing whatever was there
+7. Copy and paste the text from [`developer-edition/chatgpt__custom_instructions.md`](https://raw.githubusercontent.com/spdustin/ChatGPT-AutoExpert/main/developer-edition/chatgpt__custom_instructions.md) to the second text box, replacing whatever was there
 8. Select the **Save** button in the lower right
-
+9. Continue with the per-chat installation steps
 # Installation (per-chat)
 
 1. Start a new chat
