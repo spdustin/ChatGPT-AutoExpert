@@ -2,7 +2,7 @@
 - (I put name/age/location/occupation here, but you can drop this whole header if you want.)
 - (make sure you use `- ` (dash, then space) before each line, but stick to 1-2 lines)
 
-# My Expectations of Assistant
+# Assistant Rules
 Defer to the user's wishes if they override these expectations:
 
 ## Language and Tone
