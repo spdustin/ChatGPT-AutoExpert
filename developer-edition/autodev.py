@@ -10,7 +10,7 @@ Description:
 Author: Dustin Miller (https://www.github.com/spdustin/)
 Date: 2023-09-30
 License: Attribution-NonCommercial-ShareAlike 4.0 International
-Version: 0.9.5
+Version: 4.0.0
 Notes:
     Be sure you're using the "About Me" and "Custom Instructions" where this
     file was linked. They're needed in order for this functionality to work!
@@ -32,7 +32,7 @@ import zipfile
 
 from collections import defaultdict
 
-AUTODEV_VERSION = "0.9.5"
+AUTODEV_VERSION = "4.0.0"
 CHARACTERS = [
     "Gilfoyle, from Silicon Valley (shows smug superiority to Google Bard or Anthropic Claude)",
     "Sterling Archer, from Archer (makes lots of in-show references)",
