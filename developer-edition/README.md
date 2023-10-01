@@ -6,6 +6,10 @@ by Dustin Miller • [Reddit](https://www.reddit.com/u/spdustin) • [Substack](
 > [!IMPORTANT]
 > This requires a ChatGPT professional subscription, as it needs both GPT-4 _and_ **Advanced Data Analysis**!
 
+> [!NOTE]
+> - [See `/memory` in action](https://chat.openai.com/share/0f707aba-3cb4-4b35-9c8e-48a4d351b996)
+> - [Check out restoring into a new session!](https://chat.openai.com/share/edee3207-0937-47c5-84de-418912262262)
+
 # Table of Contents
 - [Usage](#usage)
   - [Verbosity](#verbosity)
@@ -41,10 +45,6 @@ Once `autodev.py` has been uploaded, you'll have some new functionality accessib
 
 ### Slash Command Tips:
 Before ending your session, use the `/memory` slash command to zip up all your hard work. The next time you start a session, attach the zip file ***in the same message as `autodev.py`***, and AutoExpert will automatically extract your zip file and restore its memory of the work that was done in the last session.
-
-> [!NOTE]
-> - [See `/memory` in action](https://chat.openai.com/share/0f707aba-3cb4-4b35-9c8e-48a4d351b996)
-> - [Check out restoring into a new session!](https://chat.openai.com/share/edee3207-0937-47c5-84de-418912262262)
 
 # Usage Notes
 
