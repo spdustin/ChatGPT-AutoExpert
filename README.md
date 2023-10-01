@@ -8,8 +8,8 @@ ChatGPT AutoExpert is a **_shockingly effective_** set of custom instructions ai
 ## Getting Started
 To get started with ChatGPT AutoExpert, choose which set of custom instructions you want to use:
 
-* [AutoExpert](standard-edition) (for non-coding tasks)
-* [AutoExpert (Developer Edition)](developer-edition) (GPT-4 only, with optional support for Advanced Data Analysis)
+* [AutoExpert](standard-edition)<br>(for non-coding tasks)
+* [AutoExpert (Developer Edition)](developer-edition)<br>(requires GPT-4 with Advanced Data Analysis)
 
 ## Features
 
