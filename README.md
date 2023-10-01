@@ -5,6 +5,8 @@ by Dustin Miller • [Reddit](https://www.reddit.com/u/spdustin) • [Substack](
 
 _Elevating Conversational AI to Expert Level_
 
+_**Want to support these free prompts? [My Substack](https://spdustin.substack.com) offers paid subscriptions, that's the best way to show your appreciation.**_
+
 ## Introduction
 ChatGPT AutoExpert is a **_shockingly effective_** set of custom instructions aimed at enhancing the capabilities of GPT-4 and GPT-3.5-Turbo conversational models. These instructions maximize the depth and nuance in responses while minimizing general disclaimers and hand-holding. The ultimate objective is to provide users with accurate, context-rich information and an improved learning experience.
 

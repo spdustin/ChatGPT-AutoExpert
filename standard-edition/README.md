@@ -3,6 +3,8 @@ by Dustin Miller • [Reddit](https://www.reddit.com/u/spdustin) • [Substack](
 
 **License**: [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
+_**Want to support these free prompts? [My Substack](https://spdustin.substack.com) offers paid subscriptions, that's the best way to show your appreciation.**_
+
 > [!IMPORTANT]
 > While this supports ChatGPT using the GPT-3.5 model, it does work better with the GPT-4 model (naturally).
 
