@@ -1,11 +1,13 @@
 # ChatGPT AutoExpert: Elevating Conversational AI to Expert Level
 
 ## Introduction
-ChatGPT AutoExpert is a _shockingly effective_** set of custom instructions aimed at enhancing the capabilities of GPT-4 and GPT-3.5-Turbo conversational models. These instructions maximize the depth and nuance in responses while minimizing general disclaimers and hand-holding. The ultimate objective is to provide users with accurate, context-rich information and an improved learning experience.
+ChatGPT AutoExpert is a **_shockingly effective_** set of custom instructions aimed at enhancing the capabilities of GPT-4 and GPT-3.5-Turbo conversational models. These instructions maximize the depth and nuance in responses while minimizing general disclaimers and hand-holding. The ultimate objective is to provide users with accurate, context-rich information and an improved learning experience.
 
 ## Features
 
-### ["Standard"](standard-edition)
+### ["Standard Edition"](standard-edition)
+- **Perfect for Everyday Use**<br>
+    No need to switch these instructions on and off. They'll give you a greatly improved experience with ChatGPT, even if you're writing code. Although, if you _are_ writing code, you should check the [Developer Edition](developer-edition)
 - **Automatically Identifies the Best Expert**<br>
     The AutoExpert custom instruction automatically finds the best expert role to answer whatever question you ask, every time. You don't need a bunch of special prompts any more—this works with even the simplest of prompts!
 - **Maximized Depth and Nuance**<br>
