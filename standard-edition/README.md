@@ -55,7 +55,7 @@ Once these instructions are in place, you should immediately notice a dramatic i
 | `/links`                         | get a list of additional Google search links that might be useful or interesting                                           | ✅       | ✅     |
 | `/redo`                          | prompts the assistant to develop its answer again, but using a different framework or methodology                          | ❌       | ✅     |
 | `/alt`                           | prompts the assistant to provide alternative views of the topic at hand                                                    | ❌       | ✅     |
-| `/arg`                           | prompts the assitant to provide a more argumentative or controversial take of the current topic                            | ❌       | ✅     |
+| `/arg`                           | prompts the assistant to provide a more argumentative or controversial take of the current topic                            | ❌       | ✅     |
 | `/joke`                          | gets a topical joke, just for grins                                                                                        | ❌       | ✅     |
 
 ## Verbosity
