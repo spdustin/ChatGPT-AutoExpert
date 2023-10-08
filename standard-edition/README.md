@@ -37,9 +37,6 @@ _**Want to support these free prompts? [My Substack](https://spdustin.substack.c
 
 # Usage Notes
 
-> [!NOTE]
-> - [**See it in action** with this example shared chat](https://chat.openai.com/share/391262b8-cc16-4b38-944a-fe363e2ababd)
-
 Once these instructions are in place, you should immediately notice a dramatic improvement in ChatGPT's responses. Why are its answers so much better? It comes down to how ChatGPT "attends to" both text you've written, and the text it's in the middle of writing.
 
 > [!NOTE]
