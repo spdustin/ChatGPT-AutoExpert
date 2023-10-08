@@ -19,18 +19,22 @@ To get started with ChatGPT AutoExpert, choose which set of custom instructions 
 ## Features
 
 ### ["Standard Edition"](standard-edition)
+- ✳️ **New to v5**: **Automatically Improves your Question**<br>
+    Many of us still compose ambiguous questions when asking ChatGPT for help. The AutoExpert will automatically rewrite your question to be precise, and to elicit the best response the experts can provide.
+- ✳️ **New to v5**: **Slash Commands**<br>
+    Slash commands offer an easy way to interact with the AutoExpert system. Get summaries, ideas for additional questions, alternative viewpoints…even ask ChatGPT to review its own answer and suggest improvements.
+- ✳️ **New to v5**: **Auto-selects Frameworks and Methodologies**<br>
+    Designed to select a context-appropriate framework for formulating its best answers
+- **Maximized Depth and Nuance**<br>
+    Receive high-quality, in-depth, and ✳️ **New to v5**: multi-turn responses (_**GPT-4 only**_) without compromising on the granularity of the information.
 - **Perfect for Everyday Use**<br>
     No need to switch these instructions on and off. They'll give you a greatly improved experience with ChatGPT, even if you're writing code. Although, if you _are_ writing code, you should check the [Developer Edition](developer-edition)
 - **Automatically Identifies the Best Expert**<br>
-    The AutoExpert custom instruction automatically finds the best expert role to answer whatever question you ask, every time. You don't need a bunch of special prompts any more—this works with even the simplest of prompts!
-- **Maximized Depth and Nuance**<br>
-    Receive high-level, in-depth responses without compromising on the granularity of the information.
+    The AutoExpert custom instruction automatically finds the best expert roles to answer whatever question you ask, every time. You don't need a bunch of special prompts any more—this works with even the simplest of prompts!
 - **Minimized Hand-Holding**<br>
     Cut through the noise and get straight to the facts, reducing unnecessary disclaimers.
 - **Explicit Reasoning**<br>
     Your AutoExpert doesn't just provide answers; it offers an explanation, detailing the thought process behind each response.
-- **Self-Questioning**<br>
-    Designed to question its assumptions, and iteratively refine its responses for maximum clarity and accuracy.
 - **Resourceful Links**<br>
     Automatically generates inline links for related topics and "you may also like" topics, helpfully linked to Google search results to avoid hallucination (GPT-3.5 still hallucinates here, but not always. GPT-4 is rock-solid).
 
