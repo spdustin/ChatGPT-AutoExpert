@@ -13,7 +13,7 @@ _**Want to support these free prompts? [My Substack](https://spdustin.substack.c
 **Check it out in action:**
 - [Transcript of a quick trial run](https://chat.openai.com/share/0c3d8f4e-1b62-4713-a645-f087c88d9602)
 
-First thing's first: even if you're in a voice conversation, the attention mechanisms used by the underlying GPT model are still in play. Your speech is transcribed to text automatically, and the assistant's response is translated back to speech. The model itself doesn't know anything about speech—it's still text going in and out of it.
+First thing's first: even if you're in a voice conversation, the attention mechanisms used by the underlying GPT model are **still in play**. Your speech is transcribed to text automatically, and the assistant's response is translated back to speech. The model itself doesn't know anything about speech—it's still text going in and out of it.
 
 Everything you've learned about prompting and attention _still applies_. The difference is in how you instruct the model to behave _during a voice conversation_, either with a SYSTEM prompt or custom instructions, like these. The model's instructions should reflect that **voice** is the human-computer interface rather than text.
 
