@@ -35,7 +35,7 @@ Another thing to keep in mind is the way the text-to-speech voices tend to "emot
 
 # Usage Notes
 
-These instructions are meant for use in the ChatGPT mobile apps in "voice conversation" mode.
+These instructions are meant for use in the ChatGPT mobile apps in "**voice conversation**" mode.
 
 ## "Hey Otto" commands
 ✳️ **New to v5.1**: "Hey Otto" commands offer an easy way to interact with the AutoExpert system during a voice conversation.
