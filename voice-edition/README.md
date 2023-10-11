@@ -15,7 +15,7 @@ _**Want to support these free prompts? [My Substack](https://spdustin.substack.c
 
 First thing's first: even if you're in a voice conversation, the attention mechanisms used by the underlying GPT model are still in play. Your speech is transcribed to text automatically, and the assistant's response is translated back to speech. The model itself doesn't know anything about speech—it's still text going in and out of it.
 
-Everything you've learned about prompting and attention still applies. The difference is in how you instruct the model to behave during a voice convesation, either with a SYSTEM prompt or custom instructions, like these. The model's instructions should reflect that **voice** is the human-computer interface rather than text.
+Everything you've learned about prompting and attention _still applies_. The difference is in how you instruct the model to behave during a voice convesation, either with a SYSTEM prompt or custom instructions, like these. The model's instructions should reflect that **voice** is the human-computer interface rather than text.
 
 Designing speech prompts for GPT models is a balancing act between getting conversational outputs from the assistant, and allowing the voice user to interact with the assistant naturally. For example: I chose "Hey Otto" for special commands because it's similar to the "activation phrase" many folks are used to using with Siri, Alexa, and Google. It's addressing the assistant "out of band" from the AutoExpert conversation itself.
 
