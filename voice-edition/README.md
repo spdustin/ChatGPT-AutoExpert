@@ -23,16 +23,6 @@ Another thing to keep in mind is the way the text-to-speech voices tend to "emot
 
 ***
 
-# Table of Contents
-- [Usage Notes](#usage-notes)
-  - [Slash Commands](#slash-commands)
-  - [Verbosity](#verbosity)
-  - [Automatically Select an Expert](#the-autoexpert-secret-sauce)
-  - [Write Nuanced Answers with Inline Links to More Info](#write-nuanced-answers-with-inline-links-to-more-info)
-  - [Multi-turn Responses for More Depth and Detail](#multi-turn-responses-for-more-depth-and-detail) (_**GPT-4 only**_)
-  - [Provide Direction for Additional Research](#provide-direction-for-additional-research)
-- [Installation (one-time)](#installation-one-time)
-
 # Usage Notes
 
 These instructions are meant for use in the ChatGPT mobile apps in "**voice conversation**" mode.
