@@ -5,7 +5,7 @@ Let's see what `SYSTEM` messages are used behind the scenes at ChatGPT, and how 
 **All examples are from GPT-4**.
 
 ## Standard chat
-The normal ChatGPT `SYSTEM` message is pretty bare-bones (and has some grammar errors)
+The normal ChatGPT `SYSTEM` message is pretty bare-bones
 
 ```
 You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture.
@@ -15,7 +15,7 @@ Image input capabilities: Enabled
 ```
 
 ## Browse with Bing
-When browsing with Bing, the `SYSTEM` message goes HARD:
+When browsing with Bing, the `SYSTEM` message goes HARD (and has some grammar errors):
 (_white space aroud functions added by me_)
 
 ```
