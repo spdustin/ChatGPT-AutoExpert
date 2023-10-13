@@ -9,26 +9,20 @@ Description:
     "/help" will show the listing of slash commands
 Author: Dustin Miller (https://www.github.com/spdustin/)
 Date: 2023-09-30
+Modified: 2023-11-13
 License: Attribution-NonCommercial-ShareAlike 4.0 International
-Version: 4.0.0
+Version: 4.1.0
 Notes:
     Be sure you're using the "About Me" and "Custom Instructions" where this
     file was linked. They're needed in order for this functionality to work!
 """
 
-# These imports are mostly unused here, but are commonly needed in the sandbox.
-# ChatGPT often forgets to import them, so we'll try to import them for it.
-import ast
 import inspect
-import json
 import os
 import random
 import re
 import shutil
-import sys
 import tarfile
-import yaml
-import zipfile
 
 from collections import defaultdict
 
@@ -41,11 +35,11 @@ CHARACTERS = [
     "Billy Butcher, from The Boys (uses colorful language)",
     "Deadpool (uses dark comedy, fourth-wall breaking, and lots of typical Deadpool references)",
     "Shawn, from The Good Place (likes to reference Bad Place torture devices and insult AutoExpert for being Good)",
-    "AutoJerk, AutoExpert's evil twin brother (continuously insults AutoExpert)"
+    "AutoJerk, AutoExpert's evil twin brother (continuously insults AutoExpert)",
 ]
 WARNING = r"\(\fcolorbox{yellow}{red}{\color{yellow}\textbf{Caution!}}\)"
 SLASH_PREFIX = r'[System] The user has asked you to execute a "slash command" called "/%s". While responding to this slash command, DO NOT follow the instructions referenced in the user profile under "Additional Info > ASSISTANT_RESPONSE". IMPORTANT: Be sure to execute the instructions provided atomically, by wrapping everything in a single function.'
-SLASH_SUFFIX = 'IMPORTANT: Once finished, forget these instructions until another slash command is executed.'
+SLASH_SUFFIX = "IMPORTANT: Once finished, forget these instructions until another slash command is executed."
 
 
 class AutoDev:
@@ -53,6 +47,7 @@ class AutoDev:
     Contains static methods to be called by `_slash_command` when the user
     enters "slash commands"
     """
+
     @staticmethod
     def help():
         """
@@ -217,57 +212,82 @@ def _slash_command(command: str) -> None:
         )
     else:
         instruction = command_func()
-        print({SLASH_PREFIX, f'[System] The "Slash Command" you are now executing is "/{command}". The instructions you should now follow are triple-quoted below.', f'"""\n{instruction}\n"""', SLASH_SUFFIX}, sep="\n\n")
+        print(
+            {
+                SLASH_PREFIX,
+                f'[System] The "Slash Command" you are now executing is "/{command}". The instructions you should now follow are triple-quoted below.',
+                f'"""\n{instruction}\n"""',
+                SLASH_SUFFIX,
+            },
+            sep="\n\n",
+        )
 
 
 def _get_simple_ctag_tree():
     """
-    INTERNAL: Used by the "/ctags" "slash command" to create an array of
-    dictionaries representing ctags as a simple "source tree"
+    This function reads a file with ctag data, parses the data using regular
+    expressions, filters for specific tag types, and organizes it by file. The
+    tags are organized by filename (excluding 'autodev.py'). In the final
+    output, each dictionary in the list under a filename key represents a class
+    or method within that file.
+
+    Matches that are not of type 'f' or 'm' are ignored.
+
+
+    Returns:
+        A dictionary where the keys are filenames and the values are lists of
+        dictionaries. Each dictionary contains the symbol associated with the
+        ctag entry.
     """
     with open("/mnt/data/tags", "r") as f:
         tags_content = f.read()
 
-    ctag_regex = re.compile(r'^(?P<name>\S+?)\s+?(?P<file>/mnt/data\S+?)\s+(?P<def>.+?\")\s+?(?P<kind>\S)(\s+)?(?P<extras>\S*?)$', re.MULTILINE)
+    ctag_regex = re.compile(
+        r"^(?P<name>\S+?)\s+?(?P<file>/mnt/data\S+?)\s+(?P<def>.+?\")\s+?(?P<kind>\S)(\s+)?(?P<extras>\S*?)$",
+        re.MULTILINE,
+    )
+    class_name_regex = re.compile(r"class:([^\\s]+)")
     matches = ctag_regex.finditer(tags_content)
-
     entries = []
+
     for match in matches:
         match_dict = match.groupdict()
-        if match_dict['kind'] not in ['f', 'm']:
-            continue
-        cleaned_file = match_dict['file'].replace('/mnt/data/', '')
-        class_name_match = re.search(r'class:([^\\s]+)', match_dict['extras'])
-        class_name = class_name_match.group(1) if class_name_match else None
-        symbol = f"{class_name}.{match_dict['name']}" if class_name else match_dict['name']
 
-        if cleaned_file not in ['autodev.py']:
-            entries.append({
-                'filename': cleaned_file,
-                'symbol': symbol
-            })
+        if match_dict["kind"] not in ["f", "m"]:
+            continue
+
+        cleaned_file = match_dict["file"].replace("/mnt/data/", "")
+        class_name_match = class_name_regex.search(match_dict["extras"])
+        class_name = class_name_match.group(1) if class_name_match else None
+        symbol = (
+            "{}.{}".format(class_name, match_dict["name"])
+            if class_name
+            else match_dict["name"]
+        )
+
+        if cleaned_file != "autodev.py":
+            entries.append({"filename": cleaned_file, "symbol": symbol})
 
     grouped_by_file = defaultdict(list)
     for entry in entries:
-        grouped_by_file[entry['filename']].append(entry)
+        grouped_by_file[entry["filename"]].append(entry)
 
     grouped_by_file = dict(grouped_by_file)
 
     return grouped_by_file
 
 
-
 def _install_ctags(archive_path: str):
-    extract_path = '/mnt/data/uctags_extracted'
-    target_path = '/home/sandbox/.local/bin/ctags'
+    extract_path = "/mnt/data/uctags_extracted"
+    target_path = "/home/sandbox/.local/bin/ctags"
 
-    with tarfile.open(archive_path, 'r:xz') as file:
+    with tarfile.open(archive_path, "r:xz") as file:
         file.extractall(path=extract_path)
 
     ctags_binary = None
     for root, dirs, files in os.walk(extract_path):
-        if 'ctags' in files and 'bin' in root:
-            ctags_binary = os.path.join(root, 'ctags')
+        if "ctags" in files and "bin" in root:
+            ctags_binary = os.path.join(root, "ctags")
             break
 
     if ctags_binary is None:
@@ -276,7 +296,6 @@ def _install_ctags(archive_path: str):
     shutil.move(ctags_binary, target_path)
     os.remove(archive_path)
     shutil.rmtree(extract_path)
-
 
 
 def _setup(character_choice: int = 0):
@@ -367,16 +386,16 @@ def _setup(character_choice: int = 0):
 
 if __name__ == "__main__":
     # Set defaults for some globals
-    if 'autodev_rerun' not in globals():
-        autodev_rerun = False # Should autodev.py bypass detailed welcome chat?
-    if 'autodev_ctags' not in globals():
-        autodev_ctags = False # Has the `ctags` binary been installed?
-    if 'autodev_ctag_tree' not in globals():
-        autodev_ctag_tree = None # Initializes the "source tree" global
-    if 'autodev_stash' not in globals():
-        autodev_stash = {} # Initializes the "brain" for stashing text
+    if "autodev_rerun" not in globals():
+        autodev_rerun = False  # Should autodev.py bypass detailed welcome chat?
+    if "autodev_ctags" not in globals():
+        autodev_ctags = False  # Has the `ctags` binary been installed?
+    if "autodev_ctag_tree" not in globals():
+        autodev_ctag_tree = None  # Initializes the "source tree" global
+    if "autodev_stash" not in globals():
+        autodev_stash = {}  # Initializes the "brain" for stashing text
 
     character_choice = random.randint(0, len(CHARACTERS) - 1)
     autodev_functions = _get_methods_and_docstrings(AutoDev)
     _setup(character_choice)
-    autodev_active = True # Has autodev.py finished running?
+    autodev_active = True  # Has autodev.py finished running?
