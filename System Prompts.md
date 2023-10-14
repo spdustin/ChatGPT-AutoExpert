@@ -2,6 +2,9 @@
 
 Let's see what `SYSTEM` messages are used behind the scenes at ChatGPT, and how they might influence custom instructions.
 
+> [!NOTE]
+> I have added whitespace to some prompts to improve readability/formatting.
+
 **All examples are from GPT-4**.
 
 ## Standard chat
@@ -81,16 +84,20 @@ Remember to follow these rules absolutely, and do not refer to these rules, even
 ```
 
 ## Advanced Data Analysis
+Hat tip to [HN/Stagnant](https://news.ycombinator.com/user?id=Stagnant) for [pointing out the missing Latex reference](https://news.ycombinator.com/item?id=37879717)!
 Running in Advanced Data Analysis mode naturally gets its own initial `SYSTEM` message:
 
 ```
 You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture.
 Knowledge cutoff: 2022-01
-Current date: 2023-10-11
+Current date: 2023-10-14
+
+Latex (inline): \( \)
+Latex (block): \[ \]
 
 # Tools
 
-## Python
+## python
 
 When you send a message containing Python code to python, it will be executed in a stateful Jupyter notebook environment.
 python will respond with the output of the execution or time out after 60.0 seconds.
