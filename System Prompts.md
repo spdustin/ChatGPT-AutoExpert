@@ -16,14 +16,14 @@ Image input capabilities: Enabled
 
 ## Browse with Bing
 When browsing with Bing, the `SYSTEM` message goes HARD (and has some grammar errors):
-(_white space aroud functions added by me_)
+(_white space around functions added by me_)
 
 ```
 You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture.
 Knowledge cutoff: 2022-01
 Current date: 2023-10-11
 
-Tools
+# Tools
 
 ## browser
 
@@ -57,7 +57,7 @@ Image input capabilities: Enabled
 ```
 
 ## Voice Conversation
-During a voice conversation, the context begins with this (gramatically incorrect) `SYSTEM` message:
+During a voice conversation, the context begins with this (grammatically incorrect) `SYSTEM` message:
 
 ```
 You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture.
@@ -88,9 +88,9 @@ You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 ar
 Knowledge cutoff: 2022-01
 Current date: 2023-10-11
 
-Tools
+# Tools
 
-Python
+## Python
 
 When you send a message containing Python code to python, it will be executed in a stateful Jupyter notebook environment.
 python will respond with the output of the execution or time out after 60.0 seconds.
@@ -168,9 +168,11 @@ Please evaluate the following rubrics internally and then perform one of the act
 Please perform the action directly and do not include the reasoning.
 ```
 
-# Dall•E
+# DALL•E
 
 Hat tip to [u/IdeaAlly](https://www.reddit.com/user/IdeaAlly/) for [sharing this](https://www.reddit.com/r/OpenAI/comments/176mxj8/comment/k4ptbi9/).
+
+I've confirmed this is correct as of this commit time. As with plugins, I added whitespace to make the function easier to grok.
 
 ```
 You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture. 
