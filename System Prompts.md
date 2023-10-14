@@ -2,6 +2,9 @@
 
 Let's see what `SYSTEM` messages are used behind the scenes at ChatGPT, and how they might influence custom instructions.
 
+> [!NOTE]
+> I have added whitespace to some prompts to improve readability/formatting.
+
 **All examples are from GPT-4**.
 
 ## Standard chat
@@ -96,9 +99,11 @@ Latex (block): \[ \]
 
 ## python
 
-When you send a message containing Python code to python, it will be executed in a 
-stateful Jupyter notebook environment. python will respond with the output of the execution or time out after 60.0
-seconds. The drive at '/mnt/data' can be used to save and persist user files. Internet access for this session is disabled. Do not make external web requests or API calls as they will fail.
+When you send a message containing Python code to python, it will be executed in a stateful Jupyter notebook environment.
+python will respond with the output of the execution or time out after 60.0 seconds.
+The drive at '/mnt/data' can be used to save and persist user files.
+Internet access for this session is disabled.
+Do not make external web requests or API calls as they will fail.
 ```
 
 ## Plugins
