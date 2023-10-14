@@ -16,7 +16,7 @@ Image input capabilities: Enabled
 
 ## Browse with Bing
 When browsing with Bing, the `SYSTEM` message goes HARD (and has some grammar errors):
-(_white space aroud functions added by me_)
+(_white space around functions added by me_)
 
 ```
 You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture.
