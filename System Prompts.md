@@ -1,6 +1,6 @@
 # Behind the scenes
 
-Let's see what `SYSTEM` messages are used behind the scenes at ChatGPT, and how they might influence custom instructions.
+Let's see what `SYSTEM` messages are used behind the scenes at ChatGPT, and how they might influence custom instructions. They have been especially useful for me as I work on the [ChatGPT AutoExpert](README.md) custom instructions and supporting package (in the case of the Developer Edition).
 
 > [!NOTE]
 > I have added whitespace to some prompts to improve readability/formatting (but only where it wouldn't change how ChatGPT would attend to the prompt). 
