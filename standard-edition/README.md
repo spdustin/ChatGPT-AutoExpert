@@ -68,7 +68,7 @@ You can alter the verbosity of the answers provided by ChatGPT by prefixing your
 
 ## The AutoExpert "Secret Sauce"
 
-Every time you ask ChatGPT a question, it is instructed to create a preamble at the start of its response. This preamble is designed to automatically adjust ChatGPT's "attention mechnisms" to attend to specific tokens that positively influence the quality of its completions. This preamble sets the stage for higher-quality outputs by:
+Every time you ask ChatGPT a question, it is instructed to create a preamble at the start of its response. This preamble is designed to automatically adjust ChatGPT's "attention mechanisms" to attend to specific tokens that positively influence the quality of its completions. This preamble sets the stage for higher-quality outputs by:
 
 - Selecting the best available expert(s) able to provide an authoritative and nuanced answer to your question
   - By specifying this in the output context, the emergent attention mechanisms in the GPT model are more likely to respond in the style and tone of the expert(s)

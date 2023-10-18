@@ -52,7 +52,7 @@ Before ending your session, use the `/memory` slash command to zip up all your h
 
 Once the custom instructions have been set (and the `autodev.py` file has been uploaded), you should notice that ChatGPT's responses to your coding requests are a lot smarter. Why?
 
-Every time you ask ChatGPT to code something, it is instructed to create a preamble at the start of its response. This preamble is designed to automatically adjust ChatGPT's "attention mechnisms" to pay more attention to your requirements, the type of code it will need to write, and the plan it should follow when writing it.
+Every time you ask ChatGPT to code something, it is instructed to create a preamble at the start of its response. This preamble is designed to automatically adjust ChatGPT's "attention mechanisms" to pay more attention to your requirements, the type of code it will need to write, and the plan it should follow when writing it.
 
 ## Preamble Example:
 
