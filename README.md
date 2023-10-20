@@ -5,6 +5,8 @@ by Dustin Miller • [Reddit](https://www.reddit.com/u/spdustin) • [Substack](
 
 _Elevating Conversational AI to Expert Level_
 
+<a href="https://trendshift.io/repositories/3540" target="_blank"><img src="https://trendshift.io/api/badge/repositories/3540" alt="spdustin%2FChatGPT-AutoExpert | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+
 _**Want to support these free prompts? [My Substack](https://spdustin.substack.com) offers paid subscriptions, that's the best way to show your appreciation.**_
 
 ## Introduction
