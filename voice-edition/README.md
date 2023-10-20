@@ -101,9 +101,9 @@ ChatGPT AutoExpert ("Standard" Edition) is intended for use in the ChatGPT web i
     > [!WARNING]
     > You should save the contents of your existing custom instructions somewhere, because you're about to overwrite both text boxes!
 4. Into the first textbox, copy and paste the text from the "About Me" source, replacing whatever was there
-  - [`voice-edition/chatgpt_GPT4_voice__about_me`](voice-edition/chatgpt_GPT4_voice__about_me)
+  - [`voice-edition/chatgpt_GPT4_voice__about_me`](chatgpt_GPT4_voice__about_me.md?plain=1)
 5. Into the second textbox, copy and paste the text from the "Custom Instructions" source, replacing whatever was there
 main/standard-edition/chatgpt_GPT3__custom_instructions.md)
-  - [`voice-edition/chatgpt_GPT4_voice__custom_instructions.md`](voice-edition/chatgpt_GPT4_voice__custom_instructions.md)
+  - [`voice-edition/chatgpt_GPT4_voice__custom_instructions.md`](chatgpt_GPT4_voice__custom_instructions.md?plain=1)
 6. Select the **Save** button in the lower right
 7. Try starting a voice conversation on your mobile device
