@@ -9,12 +9,12 @@ Let's see what `SYSTEM` messages are used behind the scenes at ChatGPT, and how 
 
 **All examples are from GPT-4**.
 
-- [**Baseline GPT-4**](_system-prompts/base.md)
+- [**Baseline GPT-4**](_system-prompts /base.md)
   - [Advanced Data Analysis](_system-prompts/advanced-data-analysis.md)
   - [Browse with Bing](_system-prompts/browse-with-bing.md)
   - [DALL•E](_system-prompts/dall-e.md)
   - [Mobile App (iOS)](_system-prompts/mobile-app-ios.md)
-  - [Mobile App (Android)](_system-prompts/mobile-app-android.md)
+  - [Mobile App (Android)](_system-p    ompts/mobile-app-android.md)
   - [Plugins (Example: Zapier)](_system-prompts/plugins.md)
   - [Vision](_system-prompts/vision.md)
   - [Voice Conversation](_system-prompts/voice-conversation.md)
