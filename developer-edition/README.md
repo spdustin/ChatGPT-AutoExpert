@@ -31,7 +31,7 @@ You can alter the verbosity of the code written by ChatGPT by prefixing your req
 - `V=0`: code golf (really terse)
 - `V=1`: concise, but not overly clever
 - `V=2`: simple (the default)
-- `V=3`: verbose, paying even more attention to DRY principals
+- `V=3`: verbose, paying even more attention to DRY principles
 
 ## Slash Commands
 Once `autodev.py` has been uploaded, you'll have some new functionality accessible through the use of **Slash Commands**:
