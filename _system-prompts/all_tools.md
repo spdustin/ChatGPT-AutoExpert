@@ -140,4 +140,3 @@ referenced_image_ids?: string[],
 }) => any;
 
 } // namespace dalle
-
