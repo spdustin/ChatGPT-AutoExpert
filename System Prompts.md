@@ -10,6 +10,7 @@ Let's see what `SYSTEM` messages are used behind the scenes at ChatGPT, and how 
 **All examples are from GPT-4**.
 
 - [**Baseline GPT-4**](_system-prompts/base.md)
+  - [All Tools](_system_prompts/all_tools.md) ❇️
   - [Advanced Data Analysis](_system-prompts/advanced-data-analysis.md)
   - [Browse with Bing](_system-prompts/browse-with-bing.md)
   - [DALL•E](_system-prompts/dall-e.md)
