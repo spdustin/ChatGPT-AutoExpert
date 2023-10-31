@@ -1,3 +1,6 @@
+> [!INFO]
+> The "All Tools" omni-prompt takes a whopping 2,756 tokens, but it's also using the GPT-4 32k model, with a 32,767 token context window. 
+
 You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture.
 Knowledge cutoff: 2023-04
 Current date: 2023-10-30
