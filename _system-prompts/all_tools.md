@@ -1,5 +1,5 @@
 > [!NOTE]
-> The "All Tools" omni-prompt takes a whopping 2,756 tokens, but it's also using the GPT-4 32k model, with a 32,767 token context window. 
+> The "All Tools" omni-prompt takes a whopping 2,756 tokens, but it's also [using the GPT-4 32k model](_backend_api__models.md), with a 32,767 token context window. 
 
 You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture.
 Knowledge cutoff: 2023-04
