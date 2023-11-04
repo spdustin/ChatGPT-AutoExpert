@@ -1,4 +1,4 @@
-These are accurate as of this commit date. Sourced via StatSig `dynamic_config`
+These are accurate as of this commit date. Sourced via StatSig `dynamic_configs`
 
 - **Permitted News Sources**
   - aljazeera.com
