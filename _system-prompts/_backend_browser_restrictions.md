@@ -1,3 +1,5 @@
+These are accurate as of this commit date. Sourced via StatSig `dynamic_config`
+
 - **Permitted News Sources**
   - aljazeera.com
   - apnews.com
