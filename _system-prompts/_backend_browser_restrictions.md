@@ -15,6 +15,7 @@ These are accurate as of this commit date. Sourced via StatSig `dynamic_configs`
   - zeenews.india.com
 
 - **Restricted News Sources**
+  (Likely due to sites who've denied access to their sites for training) 
   - abc7.com
   - abcnews.com
   - abcnews.go.com
@@ -91,6 +92,7 @@ These are accurate as of this commit date. Sourced via StatSig `dynamic_configs`
   - wsj.com
 
 - **Personal Information Privacy Protection List**
+  (Likely preventing "Browse with Bing" from being used to identify people)
   - 411.com
   - acxiom.com
   - advanced-people-search.com
@@ -167,6 +169,7 @@ These are accurate as of this commit date. Sourced via StatSig `dynamic_configs`
   - zoominfo.com
 
 - **Content Reuse Restriction List**
+  (Best guess: potential copyright or other liability concerns)
   - 1lib.us
   - 3lib.net
   - Ebook3000.com
