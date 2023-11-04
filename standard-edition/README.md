@@ -144,15 +144,14 @@ After it's done answering your question, an epilogue section is created to sugge
 # Installation (one-time)
 ChatGPT AutoExpert ("Standard" Edition) is intended for use in the ChatGPT web interface, with or without a Pro subscription. To activate it, you'll need to do a few things!
 1. Sign in to [ChatGPT](https://chat.openai.com)
-2. Select the profile + ellipsis button in the lower-left of the screen to open the settings menu
-3. Select **Custom Instructions**
+2. At the bottom left corner, click on your profile name and select **Custom Instructions**.
     > [!WARNING]
     > You should save the contents of your existing custom instructions somewhere, because you're about to overwrite both text boxes!
-4. Into the first textbox, copy and paste the text from the correct "About Me" source for the GPT model you're using in ChatGPT, replacing whatever was there
+3. Into the first textbox, copy and paste the text from the correct "About Me" source for the GPT model you're using in ChatGPT, replacing whatever was there
   - GPT 3.5: [`standard-edition/chatgpt_GPT3__about_me.md`](https://raw.githubusercontent.com/spdustin/ChatGPT-AutoExpert/main/standard-edition/chatgpt_GPT3__about_me.md)
   - GPT 4: [`standard-edition/chatgpt_GPT4__about_me.md`](https://raw.githubusercontent.com/spdustin/ChatGPT-AutoExpert/main/standard-edition/chatgpt_GPT4__about_me.md)
-5. Into the second textbox, copy and paste the text from the correct "Custom Instructions" source for the GPT model you're using in ChatGPT, replacing whatever was there
+4. Into the second textbox, copy and paste the text from the correct "Custom Instructions" source for the GPT model you're using in ChatGPT, replacing whatever was there
   - GPT 3.5: [`standard-edition/chatgpt_GPT3__custom_instructions.md`](https://raw.githubusercontent.com/spdustin/ChatGPT-AutoExpert/main/standard-edition/chatgpt_GPT3__custom_instructions.md)
   - GPT 4: [`standard-edition/chatgpt_GPT4__custom_instructions.md`](https://raw.githubusercontent.com/spdustin/ChatGPT-AutoExpert/main/standard-edition/chatgpt_GPT4__custom_instructions.md)
-6. Select the **Save** button in the lower right
-7. Try it out!
+5. Select the **Save** button in the lower right
+6. Try it out!
