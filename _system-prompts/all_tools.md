@@ -1,10 +1,11 @@
 > [!WARNING]
 > For ease of reading, I've added some extra whitespace to this system prompts for easier understanding as a Markdown file. I've also added an **Important** admonition quote for DALL•E to declare the additional edits I made there.
- 
-> [!NOTE] I am working on automating these updates. When I have a reliably working process for that, you'll be able to toggle between the "raw" and "friendly" versions.
 
 > [!IMPORTANT]
-> "Browse with Bing" has a dynamically-configured list of sites it can use for news, and a list of sites it's restricted from using. [You can see those here](_backend_browser_restrictions.md)
+> - ✳️ "Browse with Bing" has a dynamically-configured list of sites it can use for news, and a list of sites it's restricted from using.\
+>   [You can see those here.](_backend_browser_restrictions.md)
+> - ✳️ There are quite a few changes to the "image input" and DALL•E sections of this prompt.\
+>   [Check out a summary of changes here.](_dalle_changes_2023-11-07.md)
 
 ***
 
