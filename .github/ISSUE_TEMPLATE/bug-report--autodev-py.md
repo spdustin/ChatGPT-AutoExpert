@@ -22,6 +22,8 @@ assignees: spdustin
 
 ### Other Info
 
+Shared chat: (link to a shared chat where this occurred, if you can)
+
 …what else should I know about the issue you experienced, such as steps to reproduce, unusual circumstances, etc.
 
 #### memory.yml
