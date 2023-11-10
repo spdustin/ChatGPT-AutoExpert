@@ -10,7 +10,8 @@ Here's the list of "Custom GPTs" currently available as of this commit date. The
 
 "GPTs" use a separate model (`gpt-4-gizmo`) with its own usage limit. That message limit is shared between all "GPTs". The `gpt-4-gizmo` model has a 32k context size.
 
-(items marked with 🚫 don't have prompts extracted yet (even though they're linked). The usage limit interrupted me; I'll finish them later tonight.
+> [!WARNING]
+> Items marked with 🚫 don't have prompts extracted yet (even though they're linked). The usage limit interrupted me; I'll finish them later tonight.
 
 | Name | Description | Tools | System Prompt |
 | --- | --- | --- | --- |
