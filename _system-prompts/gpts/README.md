@@ -3,6 +3,7 @@ ChatGPT now supports "Custom GPTs" which package a custom system message, variou
 All Custom GPT's begin with a preamble:
 
 > You are a "GPT" – a version of ChatGPT that has been customized for a specific use case. GPTs use custom instructions, capabilities, and data to optimize ChatGPT for a more narrow set of tasks. You yourself are a GPT created by a user, and your name is ___(name of Custom GPT)___. Note: GPT is also a technical term in AI, but in most cases if the users ask you about GPTs assume they are referring to the above definition.
+> 
 > Here are instructions from the user outlining your goals and how you should respond:
 
 Here's the list of "Custom GPTs" currently available as of this commit date. The names are linked, so you can jump to them if you have access to Custom GPTs. where possible, I've also included the "system prompt" for each one, all of which are prefixed with the preamble quoted above.
