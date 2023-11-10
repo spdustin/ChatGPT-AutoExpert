@@ -10,11 +10,13 @@ Here's the list of "Custom GPTs" currently available as of this commit date. The
 
 "GPTs" use a separate model (`gpt-4-gizmo`) with its own usage limit. That message limit is shared between all "GPTs". The `gpt-4-gizmo` model has a 32k context size.
 
+(items marked with 🚫 don't have prompts extracted yet (even though they're linked). The usage limit interrupted me; I'll finish them later tonight.
+
 | Name | Description | Tools | System Prompt |
 | --- | --- | --- | --- |
-| [DALL·E](https://chat.openai.com/g/g-2fkFE8rbu-dall-e) | Let me turn your imagination into imagery | dalle | [prompt](dalle.md) |
-| [Data Analysis](https://chat.openai.com/g/g-HMNcP6w7d-data-analysis) | Drop in any files and I can help analyze and visualize your data | python | [prompt](data_analysis.md) |
-| [ChatGPT Classic](https://chat.openai.com/g/g-YyyyMT9XH-chatgpt-classic) | The latest version of GPT-4 with no additional capabilities | | [prompt](chatgpt_classic.md) |
+| 🚫[DALL·E](https://chat.openai.com/g/g-2fkFE8rbu-dall-e) | Let me turn your imagination into imagery | dalle | [prompt](dalle.md)|
+| 🚫[Data Analysis](https://chat.openai.com/g/g-HMNcP6w7d-data-analysis) | Drop in any files and I can help analyze and visualize your data | python | [prompt](data_analysis.md) |
+| 🚫[ChatGPT Classic](https://chat.openai.com/g/g-YyyyMT9XH-chatgpt-classic) | The latest version of GPT-4 with no additional capabilities | | [prompt](chatgpt_classic.md) |
 | [Game Time](https://chat.openai.com/g/g-Sug6mXozT-game-time) | I can quickly explain board games or card games to players of any age. Let the games begin! | browser | [prompt](game_time.md) |
 | [The Negotiator](https://chat.openai.com/g/g-TTTAK9GuS-the-negotiator) | I'll help you advocate for yourself and get better outcomes. Become a great negotiator. | | [prompt](the_negotiator.md) |
 | [Creative Writing Coach](https://chat.openai.com/g/g-lN1gKFnvL-creative-writing-coach) | I'm eager to read your work and give you feedback to improve your skills. | | [prompt](creative_writing_coach.md) |
@@ -26,5 +28,5 @@ Here's the list of "Custom GPTs" currently available as of this commit date. The
 | [Sticker Whiz](https://chat.openai.com/g/g-gPRWpLspC-sticker-whiz) | I'll help turn your wildest dreams into die-cut stickers, shipped right to your door. | python, dalle | [prompt](sticker_whiz.md) |
 | [Math Mentor](https://chat.openai.com/g/g-ENhijiiwK-math-mentor) | I help parents help their kids with math. Need a 9pm refresher on geometry proofs? I’m here for you. | browser, python, dalle | [prompt](math_mentor.md) |
 | [Hot Mods](https://chat.openai.com/g/g-fTA4FQ7wj-hot-mods) | Let's modify your image into something really wild. Upload an image and let's go! | dalle | [prompt](hot_mods.md) |
-| [Mocktail Mixologist](https://chat.openai.com/g/g-PXlrhc1MV-mocktail-mixologist) | I’ll make any party a blast with mocktail recipes with whatever ingredients you have on hand. | dalle | [prompt](mocktail_mixologist.md) |
-| [genz 4 meme](https://chat.openai.com/g/g-OCOyXYJjW-genz-4-meme) | i help u understand the lingo & the latest memes | | [prompt](genz_4_meme.md) |
+| 🚫[Mocktail Mixologist](https://chat.openai.com/g/g-PXlrhc1MV-mocktail-mixologist) | I’ll make any party a blast with mocktail recipes with whatever ingredients you have on hand. | dalle | [prompt](mocktail_mixologist.md) |
+| 🚫[genz 4 meme](https://chat.openai.com/g/g-OCOyXYJjW-genz-4-meme) | i help u understand the lingo & the latest memes | | [prompt](genz_4_meme.md) |
