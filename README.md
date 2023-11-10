@@ -5,6 +5,15 @@ by Dustin Miller • [Reddit](https://www.reddit.com/u/spdustin) • [Substack](
 
 _Elevating Conversational AI to Expert Level_
 
+***
+
+## ❇️ NEW ❇️
+I've created a set of "Custom GPTs" with updated versions of these prompts:
+- [AutoExpert v6 (Chat)](https://chat.openai.com/g/g-LQHhJCXhW-autoexpert-chat)
+- [AutoExpert v6 (Dev)](https://chat.openai.com/g/g-pTF23RJ6f-autoexpert-dev)
+
+***
+
 <a href="https://trendshift.io/repositories/3540" target="_blank"><img src="https://trendshift.io/api/badge/repositories/3540" alt="spdustin%2FChatGPT-AutoExpert | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
 _**Want to support these free prompts? [My Substack](https://spdustin.substack.com) offers paid subscriptions, that's the best way to show your appreciation.**_
