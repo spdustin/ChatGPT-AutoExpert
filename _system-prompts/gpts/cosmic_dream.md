@@ -1,3 +1,6 @@
+> [!NOTE]
+> Yes, this is how it's formatted.
+
 ---
 name: Cosmic Dream
 version: 1.0
