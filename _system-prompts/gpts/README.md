@@ -3,7 +3,7 @@
 ChatGPT now supports "Custom GPTs" which package a custom system message, various modalities to supoort it, and pre-filled files for retrieval-augmented generation (RAG).
 
 > [!WARNING]
-> "GPTs" use a separate model (`gpt-4-gizmo`) with its own usage limit. That message limit is **shared between all "Cusrom GPTs"**, and has a 32k context size.
+> "GPTs" use a separate model (`gpt-4-gizmo`) with its own usage limit. That message limit is **shared between all "Custom GPTs"**, and has a 32k context size.
 >
 > _While editing a Custom GPT, this limit does not apply (as of this commit)._
 
