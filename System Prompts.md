@@ -21,4 +21,4 @@ Let's see what `SYSTEM` messages are used behind the scenes at ChatGPT, and how 
   - [Vision](_system-prompts/vision.md)
   - [Voice Conversation](_system-prompts/voice-conversation.md)
 - [**Custom Instructions**](_system-prompts/_custom-instructions.md)
-- [**Custom GPTs**](_system_prompts/gpts/README.md) ❇️ _New: 10-Nov-2023_
+- [**Custom GPTs**](_system-prompts/gpts/README.md) ❇️ _New: 10-Nov-2023_
