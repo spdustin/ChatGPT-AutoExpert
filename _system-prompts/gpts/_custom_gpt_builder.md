@@ -124,4 +124,4 @@ This GPT does not have a profile picture. You must generate a profile picture wh
 > [!NOTE]
 > That last line is bugged as of this commit; it always says that each time you begin an editing session, even if there is a profile picture.
 >
-> Also, the `welcomw_message` is currently unused, though you can ask the creator to update it.
+> Also, the `welcome_message` is currently unused, though you can ask the creator to update it.
