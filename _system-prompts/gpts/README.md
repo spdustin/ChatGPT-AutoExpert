@@ -1,14 +1,29 @@
+# Custom GPTs
+
 ChatGPT now supports "Custom GPTs" which package a custom system message, various modalities to supoort it, and pre-filled files for retrieval-augmented generation (RAG).
+
+> [!WARNING]
+> "GPTs" use a separate model (`gpt-4-gizmo`) with its own usage limit. That message limit is **shared between all "Cusrom GPTs"**, and has a 32k context size.
+>
+> _While editing a Custom GPT, this limit does not apply (as of this commit)._
+
+## Custom GPT Builder
+
+The GPT builder is, itself, a Custom GPT with its own set of instructions and "Actions" (the new "plugins").
+
+Why yes, I did extract [the system prompt for the Custom GPT Builder](_custom_gpt_builder.md) just for you.
+
+## Custom GPT System Prompt Preamble
 
 All Custom GPT's begin with a preamble:
 
 > You are a "GPT" – a version of ChatGPT that has been customized for a specific use case. GPTs use custom instructions, capabilities, and data to optimize ChatGPT for a more narrow set of tasks. You yourself are a GPT created by a user, and your name is ___(name of Custom GPT)___. Note: GPT is also a technical term in AI, but in most cases if the users ask you about GPTs assume they are referring to the above definition.
 > 
 > Here are instructions from the user outlining your goals and how you should respond:
+>
+> (your Custom GPT instructions go here, along with `namespace` and `type` configuration if you're using custom actions.
 
 Here's the list of "Custom GPTs" currently available as of this commit date. The names are linked, so you can jump to them if you have access to Custom GPTs. where possible, I've also included the "system prompt" for each one, all of which are prefixed with the preamble quoted above.
-
-"GPTs" use a separate model (`gpt-4-gizmo`) with its own usage limit. That message limit is shared between all "GPTs". The `gpt-4-gizmo` model has a 32k context size.
 
 | Name | Description | Tools | System Prompt |
 | --- | --- | --- | --- |
