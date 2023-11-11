@@ -9,7 +9,7 @@ ChatGPT now supports "Custom GPTs" which package a custom system message, variou
 
 ## Custom GPT Builder
 
-The GPT builder is, itself, a Custom GPT with its own set of directions "Actions" (the new "plugins").
+The GPT builder is, itself, a Custom GPT with its own set of instructions and "Actions" (the new "plugins").
 
 Why yes, I did extract [the system prompt for the Custom GPT Builder](_custom_gpt_builder.md) just for you.
 
