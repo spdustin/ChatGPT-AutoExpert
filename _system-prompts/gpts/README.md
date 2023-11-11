@@ -21,7 +21,7 @@ All Custom GPT's begin with a preamble:
 > 
 > Here are instructions from the user outlining your goals and how you should respond:
 >
-> (your Custom GPT instructions go here, along with `namespace` and `type` configuration if you're using custom actions.
+> (your Custom GPT instructions go here, along with `namespace` and `type` configuration if you're using custom actions.)
 
 Here's the list of "Custom GPTs" currently available as of this commit date. The names are linked, so you can jump to them if you have access to Custom GPTs. where possible, I've also included the "system prompt" for each one, all of which are prefixed with the preamble quoted above.
 
