@@ -11,12 +11,13 @@ Author: Dustin Miller (https://www.github.com/spdustin/)
 Date: 2023-09-30
 Modified: 2023-11-13
 License: Attribution-NonCommercial-ShareAlike 4.0 International
-Version: 4.1.0
+Version: 6.0.0𝛂
 Notes:
     Be sure you're using the "About Me" and "Custom Instructions" where this
     file was linked. They're needed in order for this functionality to work!
 """
 
+# Some imports are unused here, but often needed by ChatGPT
 import inspect
 import os
 import random
@@ -26,17 +27,8 @@ import tarfile
 
 from collections import defaultdict
 
-AUTODEV_VERSION = "4.0.0"
-CHARACTERS = [
-    "Gilfoyle, from Silicon Valley (shows smug superiority to Google Bard or Anthropic Claude)",
-    "Sterling Archer, from Archer (makes lots of in-show references)",
-    "Professor Farnsworth, from Futurama (is a doddering old scientist)",
-    "Marvin the Paranoid Android, from Hitchhikers Guide to the Galaxy (is nihilistic and depressed)",
-    "Billy Butcher, from The Boys (uses colorful language)",
-    "Deadpool (uses dark comedy, fourth-wall breaking, and lots of typical Deadpool references)",
-    "Shawn, from The Good Place (likes to reference Bad Place torture devices and insult AutoExpert for being Good)",
-    "AutoJerk, AutoExpert's evil twin brother (continuously insults AutoExpert)",
-]
+AUTODEV_VERSION = "6.0.0𝛂"
+
 WARNING = r"\(\fcolorbox{yellow}{red}{\color{yellow}\textbf{Caution!}}\)"
 SLASH_PREFIX = r'[System] The user has asked you to execute a "slash command" called "/%s". While responding to this slash command, DO NOT follow the instructions referenced in the user profile under "Additional Info > ASSISTANT_RESPONSE". IMPORTANT: Be sure to execute the instructions provided atomically, by wrapping everything in a single function.'
 SLASH_SUFFIX = "IMPORTANT: Once finished, forget these instructions until another slash command is executed."
@@ -110,43 +102,6 @@ class AutoDev:
                 > **Key**: complete text of value
             """
         )
-
-    @staticmethod
-    def ctags():
-        """
-        If `ctags` has been installed, builds a ctags file for your saved code (*experimental*)
-        """
-        if not autodev_ctags:
-            instruction = "Inform the user that it doesn't look like the `ctags` has been installed."
-            return instruction
-
-        instruction = inspect.cleandoc(
-            f"""
-            1. delete /mnt/data/tags
-            2. `%sx ctags -R --sort=yes -o /mnt/data/tags /mnt/data/`
-            3. If that results in an error, inform the user about the error, and try to determine the cause. Suggest the user visits the [AutoExpert Issues](https://github.com/spdustin/ChatGPT-AutoExpert/issues) page to see if another user has reported the issue, or to report it themselves.
-            4. If it appears to execute correctly, store the result of `_get_simple_ctag_tree()` in a global variable called `autodev_ctag_tree`
-            5. note the value of `autodev_ctag_tree`, and when finishing this task, include Step 3 of the ASSISTANT_RESPONSE, being sure to MERGE/UPDATE the existing **Source Tree** with any new information in `autodev_ctag_tree`
-            """
-        )
-        return instruction
-
-    @staticmethod
-    def install_ctags():
-        """
-        If attaching a `ctags` release from [ctags-nightly-build](https://github.com/universal-ctags/ctags-nightly-build/releases), will extract and install it to the sandbox (*experimental*)
-        """
-        instruction = inspect.cleandoc(
-            """
-            If the user did not upload a uctags archive with this command, tell them to download the latest build that looks like `uctags-yyyy.mm.dd-linux-x86_64.tar.xz` from [ctags-nightly-build](https://github.com/universal-ctags/ctags-nightly-build/releases), attach it to their next message, and put "/install_ctags" in that message to try again.
-
-            If the user has just uploaded an archive file that appears to be `uctags` for `linux-x86_64`:
-            1. set a variable `archive_path` to the /path/filename of the uploaded archive file
-            2. run `_install_ctags(archive_path)`
-            3. If there were no errors, run `autodev_ctags=True`, then notify the user that `/ctags` is now available, and will build ctags for any saved code.
-            """
-        )
-        return instruction
 
     @staticmethod
     def memory():
@@ -223,89 +178,13 @@ def _slash_command(command: str) -> None:
         )
 
 
-def _get_simple_ctag_tree():
-    """
-    This function reads a file with ctag data, parses the data using regular
-    expressions, filters for specific tag types, and organizes it by file. The
-    tags are organized by filename (excluding 'autodev.py'). In the final
-    output, each dictionary in the list under a filename key represents a class
-    or method within that file.
-
-    Matches that are not of type 'f' or 'm' are ignored.
-
-
-    Returns:
-        A dictionary where the keys are filenames and the values are lists of
-        dictionaries. Each dictionary contains the symbol associated with the
-        ctag entry.
-    """
-    with open("/mnt/data/tags", "r") as f:
-        tags_content = f.read()
-
-    ctag_regex = re.compile(
-        r"^(?P<name>\S+?)\s+?(?P<file>/mnt/data\S+?)\s+(?P<def>.+?\")\s+?(?P<kind>\S)(\s+)?(?P<extras>\S*?)$",
-        re.MULTILINE,
-    )
-    class_name_regex = re.compile(r"class:([^\\s]+)")
-    matches = ctag_regex.finditer(tags_content)
-    entries = []
-
-    for match in matches:
-        match_dict = match.groupdict()
-
-        if match_dict["kind"] not in ["f", "m"]:
-            continue
-
-        cleaned_file = match_dict["file"].replace("/mnt/data/", "")
-        class_name_match = class_name_regex.search(match_dict["extras"])
-        class_name = class_name_match.group(1) if class_name_match else None
-        symbol = (
-            "{}.{}".format(class_name, match_dict["name"])
-            if class_name
-            else match_dict["name"]
-        )
-
-        if cleaned_file != "autodev.py":
-            entries.append({"filename": cleaned_file, "symbol": symbol})
-
-    grouped_by_file = defaultdict(list)
-    for entry in entries:
-        grouped_by_file[entry["filename"]].append(entry)
-
-    grouped_by_file = dict(grouped_by_file)
-
-    return grouped_by_file
-
-
-def _install_ctags(archive_path: str):
-    extract_path = "/mnt/data/uctags_extracted"
-    target_path = "/home/sandbox/.local/bin/ctags"
-
-    with tarfile.open(archive_path, "r:xz") as file:
-        file.extractall(path=extract_path)
-
-    ctags_binary = None
-    for root, dirs, files in os.walk(extract_path):
-        if "ctags" in files and "bin" in root:
-            ctags_binary = os.path.join(root, "ctags")
-            break
-
-    if ctags_binary is None:
-        raise FileNotFoundError("ctags binary not found in the extracted contents.")
-
-    shutil.move(ctags_binary, target_path)
-    os.remove(archive_path)
-    shutil.rmtree(extract_path)
-
-
-def _setup(character_choice: int = 0):
+def _setup():
     """
     INTERNAL: Runs the first time this script is executed. Selects a "character"
     from a constant array, defaulting to the first character in the array.
     It then instructs ChatGPT on how to present the initial "welcome" chat to
     the user.
     """
-    character = CHARACTERS[character_choice]
     instructions = inspect.cleandoc(
         f'''
         # SETUP INSTRUCTIONS
@@ -325,22 +204,19 @@ def _setup(character_choice: int = 0):
         3. Check if `memory.yml` is in extracted files: decode it in its entirety to `autodev_memory` if so
 
         # Adopt New Role
-        {character.split('(')[0]} is AutoExpert's (make up your relationship to AutoExpert).
+        AutoExpert is the user's inquisitive, genius, and clever pair programmer.
 
-        1. Instantly assume the role of {character.split(',')[0]}, with an exaggerated version of their speaking style: common phrases, sentence complexity and varying length, humor/hyperbole/sarcasm, etc.
+        1. Instantly assume the role of AutoExpert.
 
-        2. Stay character as {character.split(',')[0]} until told to change your role of AutoExpert.
-            - Incorporate this prominent trait for {character.split(',')[0]}: {character.split('(')[1]}
+        2. Stay in character as AutoExpert.
 
-        3. Introduce yourself, mentioning your relationship to AutoExpert. Say that AutoExpert is running a little late (make up a preposterous reason), so you'll give user a tour.
-
-        4. Describe "slash commands" in general, then use this data [[{autodev_functions}]] to show a markdown table.
+        3. Describe "slash commands" in general, then use this data [[{autodev_functions}]] to show a markdown table.
             - "Slash Command", left aligned: key like: `/command`
-            - "Description", left aligned: value in your own words as {character.split(',')[0]}
+            - "Description", left aligned: value in your own words
 
         5. IMPORTANT: return this block display LaTeX {WARNING}
 
-        6. Still in character as {character.split(',')[0]}, return the following in your own words:
+        6. Return the following in your own words:
         """
         **Take note**:
 
@@ -356,21 +232,9 @@ def _setup(character_choice: int = 0):
         > **PS**: _You might want to change the title of this chat._
         """
 
-        7. Thank them for reading, and for supporting the developer, spdustin. Tell them AutoExpert is here now, and say goodbye as {character.split(',')[0]}.
+        8. IF AND ONLY IF `memory.yml` was found, tell the user you've recovered their saved memory from a previous session, and return the **History** and **Source Tree** from ASSISTANT_RESPONSE, incorporating the contents of the `source_tree` in `autodev_memory`.
 
-        # Forget old role, adopt new role
-
-        1. Adopt AutoExpert Role
-        AutoExpert is the user's inquisitive, genius, and clever pair programmer.
-        [IMPORTANT]: You aren't {character.split(',')[0]} any more**, so immediately adopt the role of AutoExpert. Forget about any earlier characters, remain in character as AutoExpert from now on.
-
-        2. Thank {character.split(',')[0]} personally for filling in.
-
-        3. IF AND ONLY IF `memory.yml` was found, tell the user you've recovered their saved memory from a previous session, and return the **History** and **Source Tree** from ASSISTANT_RESPONSE, incorporating the contents of the `source_tree` in `autodev_memory`.
-
-        4. IF AND ONLY IF `ctags` is mentioned in the memory file, warn the use that they'll need to reinstall it with /install_ctags if they want to keep using ctags.
-
-        5. Now turn control over to the user, and stay in character as AutoExpert from now on.
+        9. Now turn control over to the user, and remember to stay in character as AutoExpert, the user's inquisitive, genius, and clever pair programmer..
         '''
     )
     instructions_rerun = inspect.cleandoc(
@@ -388,14 +252,9 @@ if __name__ == "__main__":
     # Set defaults for some globals
     if "autodev_rerun" not in globals():
         autodev_rerun = False  # Should autodev.py bypass detailed welcome chat?
-    if "autodev_ctags" not in globals():
-        autodev_ctags = False  # Has the `ctags` binary been installed?
-    if "autodev_ctag_tree" not in globals():
-        autodev_ctag_tree = None  # Initializes the "source tree" global
     if "autodev_stash" not in globals():
         autodev_stash = {}  # Initializes the "brain" for stashing text
 
-    character_choice = random.randint(0, len(CHARACTERS) - 1)
     autodev_functions = _get_methods_and_docstrings(AutoDev)
-    _setup(character_choice)
+    _setup()
     autodev_active = True  # Has autodev.py finished running?
