@@ -84,6 +84,7 @@
         margin: 0 0 1em 0.75em;
       }
     `);
+    updateLimitText();
   }
 
   function handleError(context, error) {
@@ -349,6 +350,18 @@
         backgroundColor: "red",
       });
       handleError("handleDownloadDataClick", err);
+    }
+  }
+
+  async function updateLimitText() {
+    try {
+      const data = await fetchData(`${BASE_URL}/public-api/conversation_limit`, {}, true);
+      if (data) {
+        document.forms[0].nextElementSibling.firstChild.innerText =
+          data.message_disclaimer.textarea;
+      }
+    } catch (err) {
+      handleError("updateLimitText", err);
     }
   }
 
