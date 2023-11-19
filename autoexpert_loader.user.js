@@ -10,7 +10,6 @@
 // @grant       GM_xmlhttpRequest
 // @grant       unsafeWindow
 // @connect     llmimagineers.com
-// @connect     llmimagineers-web.s3.amazonaws.com
 // @connect     raw.githubusercontent.com
 // ==/UserScript==
 
