@@ -59,7 +59,6 @@
     }
 
     async fetchData(url, options = {}, needsAuth = false) {
-      console.log(`${this.baseUrl}/${url}`);
       if (needsAuth) {
         await this.fetchToken();
         options.headers = {
@@ -296,7 +295,6 @@
     if (response.headers.get("content-type") === "text/event-stream; charset=utf-8") {
       logEventStream(response.clone());
     }
-    console.log(response);
     return response;
   };
 
