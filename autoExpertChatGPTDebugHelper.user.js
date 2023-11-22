@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name        AutoExpert ChatGPT Debug Helper 1.0
+// @name        ChatGPT Debug Helper 1.0.1
 // @author      Dustin Miller <dustin@llmimagineers.com>
 // @namespace   https://spdustin.substack.com
-// @version     1.0
+// @version     1.0.1
 // @description Adds some helpful debugging tools to the ChatGPT UI
 // @run-at      document-idle
 // @match       https://chat.openai.com/*
@@ -10,6 +10,8 @@
 // ==/UserScript==
 
 (function () {
+  
+  console.log('starting');
 
   class AEDataService {
     constructor(baseUrl) {
@@ -57,6 +59,7 @@
     }
 
     async fetchData(url, options = {}, needsAuth = false) {
+      console.log(`${this.baseUrl}/${url}`);
       if (needsAuth) {
         await this.fetchToken();
         options.headers = {
@@ -101,6 +104,7 @@
   }
 
   const BASE_URL = "https://chat.openai.com";
+  const BASE_SUPPORT_URL = "https://llmimagineers.com";
   const CI_MODAL_TRIGGER = new KeyboardEvent("keydown", {
     key: "I",
     keyCode: 73,
@@ -113,11 +117,13 @@
   const DEBUGGER_SKIP_KEYS = ["id", "error", "create_time", "update_time", "parent_id", "conversation_id"];
 
   const aeDataService = new AEDataService(BASE_URL);
-
+  const aeSupportDataService = new AEDataService(BASE_SUPPORT_URL);
   let messages = [];
 
   async function setup() {
     const fetchedData = await aeDataService.fetchData("backend-api/user_system_messages", {}, true);
+    //const configData = await aeSupportDataService.fetchData("data/autoexpert_userscript.config.json", {}, false);
+    //console.log(configData);
     const buttonBar = createFloatingButtonContainer();
     const buttons = [{
       title: "Show custom instructions dialog",
@@ -283,8 +289,6 @@
     return createDebugLogKV(obj, true);
   }
 
-  setup();
-
   const originalFetch = window.fetch;
 
   window.fetch = async (...args) => {
@@ -292,6 +296,7 @@
     if (response.headers.get("content-type") === "text/event-stream; charset=utf-8") {
       logEventStream(response.clone());
     }
+    console.log(response);
     return response;
   };
 
@@ -347,5 +352,7 @@
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   }
+  
+  setup();
 
 })();
