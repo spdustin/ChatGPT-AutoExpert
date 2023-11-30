@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name        ChatGPT Debug Helper 1.1.4
+// @name        ChatGPT Debug Helper 1.1.5
 // @author      Dustin Miller <dustin@llmimagineers.com>
 // @namespace   https://spdustin.substack.com
-// @version     1.1.4
+// @version     1.1.5
 // @description Adds some helpful debugging tools to the ChatGPT UI
 // @run-at      document-idle
 // @match       https://chat.openai.com/*
@@ -23,7 +23,7 @@ const CI_MODAL_TRIGGER = new KeyboardEvent("keydown", {
   bubbles: true,
 });
 const originalFetch = window.fetch;
-const messages = new Map();
+let messages = new Map();
 
 class AEDataService {
   static MAX_RETRIES = 3;
@@ -167,7 +167,7 @@ async function setup() {
         if (panelDebug) {
           panelDebug.innerHTML = "";
         }
-        messages = [];
+        messages = new Map();
       },
     },
     {
