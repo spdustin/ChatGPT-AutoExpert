@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name        ChatGPT Debug Helper 1.2.0
+// @name        ChatGPT Debug Helper 1.2.1
 // @author      Dustin Miller <dustin@llmimagineers.com>
 // @namespace   https://spdustin.substack.com
-// @version     1.2.0
+// @version     1.2.1
 // @description Adds some helpful debugging tools to the ChatGPT UI
 // @run-at      document-idle
 // @match       https://chat.openai.com/*
@@ -219,23 +219,22 @@ async function setup() {
   function injectCSS() {
     const style = document.createElement("style");
     style.textContent = `
-  body[class*="debug-g-"] .hideForGPTs {
-    display: none;
-  }
-  .debug-gpts-discovery #ae_floatingButtons {
-    display: none !important;
-  }
-  .prose.dark a {
-    color: #AACCFF !important;
-    text-decoration: underline !important;
-    text-underline-offset: 2px !important;
-  }
-  .prose.dark svg {
-    stroke: #99AAFF;
-    color: #99AAFF;
-  }
-
-  `;
+      body[class*="debug-g-"] .hideForGPTs {
+        display: none;
+      }
+      .debug-gpts-discovery #ae_floatingButtons {
+        display: none !important;
+      }
+      .prose.dark a {
+        color: #AACCFF !important;
+        text-decoration: underline !important;
+        text-underline-offset: 2px !important;
+      }
+      .prose.dark svg {
+        stroke: #99AAFF;
+        color: #99AAFF;
+      }
+    `;
     document.head.appendChild(style);
   }
 
@@ -356,7 +355,7 @@ async function setup() {
   );
 
   debugPanel = createDomElementFromHTML(`
-    <div id="ae_debug_panel" style="width: 33vw; height: 90vh; opacity:0.95;" class="fixed top-0 left-0 bottom-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-gray-50 dark:bg-gray-950 rounded-md text-xs font-mono" tabindex="-1">
+    <div id="ae_debug_panel" style="width: 33vw; height: 100vh; opacity:0.95; margin:0;" class="fixed top-0 left-0 bottom-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-gray-50 dark:bg-gray-950 text-xs font-mono" tabindex="-1">
     </div>
   `);
 
@@ -373,7 +372,7 @@ async function setup() {
     const buttonToAdd = createDebugButton(debugToolbarButtons[key]);
     debugToolbar.appendChild(buttonToAdd);
   });
-  debugToolbar.appendChild(debugPanel);
+  document.body.appendChild(debugPanel);
   document.body.appendChild(debugToolbar);
 
   injectCSS();
@@ -396,7 +395,6 @@ function escapeHtml(html) {
 function render(key, value) {
   const container = document.getElementById("ae_debug_panel");
   const { author, recipient, content, status } = value;
-  console.log(key, value);
   let entry = document.getElementById(`debug-${key}`);
   let newHTML = `
     <div class="p-2 uppercase flex flex-auto justify-between flex-row" style="border-bottom: 2px solid #e5e7eb;">
@@ -443,13 +441,13 @@ function render(key, value) {
         <dt style="grid-column:span 1; ${
           isQuiet ? "font-size: .8em;" : ""
         }" class="p-1 bg-gray-100 ${
-          isQuiet ? "text-gray-500" : ""
-        }">${label}</dt>
+        isQuiet ? "text-gray-500" : ""
+      }">${label}</dt>
         <dd style="grid-column:span 4; ${
           isQuiet ? "font-size: .8em;" : ""
         }" class="p-1 whitespace-pre-wrap break-all ${
-          isQuiet ? "text-gray-500" : ""
-        }">${value}</dd>
+        isQuiet ? "text-gray-500" : ""
+      }">${value}</dd>
       `;
     }
   });
@@ -480,7 +478,7 @@ function render(key, value) {
       }
       newHTML += `
         <div style="border-top: 2px solid #e5e7eb;" class="text-gray-600 flex justify-between">
-          <div class="grow p-3 break-normal whitespace-pre-wrap">${value?.replace(
+          <div class="grow p-3 break-all whitespace-pre-wrap">${value?.replace(
             /\n/g,
             "<br>"
           )}</div>
