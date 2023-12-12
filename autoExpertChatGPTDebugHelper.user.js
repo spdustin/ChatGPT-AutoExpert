@@ -4,17 +4,11 @@
 // @namespace   https://spdustin.substack.com
 // @version     1.2.1
 // @description Adds some helpful debugging tools to the ChatGPT UI
-// @run-at      document-end
+// @run-at      document-idle
 // @match       https://chat.openai.com/*
 // @grant       none
 // ==/UserScript==
 
-const BASE_URL = "https://chat.openai.com";
-const GPT4_LIMIT_ENDPOINT = "/public-api/conversation_limit";
-const DEBUG_TRANSCRIPT_FILENAME = "autoexpert_debugger_transcript.json";
-const DEBUG_CUSTOM_INSTRUCTIONS_FILENAME = "user_system_messages.json";
-const CI_MODAL_TRIGGER = new KeyboardEvent("keydown", {
-  key: "I",
 const BASE_URL = "https://chat.openai.com";
 const GPT4_LIMIT_ENDPOINT = "/public-api/conversation_limit";
 const DEBUG_TRANSCRIPT_FILENAME = "autoexpert_debugger_transcript.json";
@@ -33,14 +27,8 @@ const DEBUG_CONTENT_LABEL_COLORS = {
   Result: "bg-green-100 text-green-700",
   Reply: "bg-gray-100 text-gray-700",
   Multi: "bg-blue-100 text-blue-700",
-  Text: "bg-yellow-100 text-yellow-700",
-  Result: "bg-green-100 text-green-700",
-  Reply: "bg-gray-100 text-gray-700",
-  Multi: "bg-blue-100 text-blue-700",
 };
 const DEBUG_STATUS_LABEL_COLORS = {
-  in_progress: "bg-yellow-100 text-yellow-700",
-  finished_successfully: "bg-green-100 text-green-700",
   in_progress: "bg-yellow-100 text-yellow-700",
   finished_successfully: "bg-green-100 text-green-700",
 };
@@ -91,9 +79,7 @@ class AEDataService {
   static RETRY_DELAY = 2000;
 
   static TOKEN_ENDPOINT = "/api/auth/session";
-  static TOKEN_ENDPOINT = "/api/auth/session";
 
-  static CI_ENDPOINT = "/backend-api/user_system_messages";
   static CI_ENDPOINT = "/backend-api/user_system_messages";
 
   constructor(baseUrl) {
@@ -101,7 +87,6 @@ class AEDataService {
     this.cachedToken = null;
     this.tokenExpiration = Date.now();
     this.defaultHeaders = {
-      "Content-Type": "application/json",
       "Content-Type": "application/json",
     };
   }
@@ -120,8 +105,6 @@ class AEDataService {
     }
     const contentType = response.headers.get("Content-Type");
     if (contentType && contentType.includes("application/json")) {
-    const contentType = response.headers.get("Content-Type");
-    if (contentType && contentType.includes("application/json")) {
       return response.json();
     }
     return response.text();
@@ -132,18 +115,11 @@ class AEDataService {
       Date.now() + AEDataService.TOKEN_EXPIRATION_BUFFER <
       this.tokenExpiration
     ) {
-    if (
-      Date.now() + AEDataService.TOKEN_EXPIRATION_BUFFER <
-      this.tokenExpiration
-    ) {
       return this.cachedToken;
     }
 
     for (let retries = 0; retries < AEDataService.MAX_RETRIES; retries++) {
       try {
-        const response = await fetch(
-          `${this.baseUrl}${AEDataService.TOKEN_ENDPOINT}`
-        );
         const response = await fetch(
           `${this.baseUrl}${AEDataService.TOKEN_ENDPOINT}`
         );
@@ -157,19 +133,12 @@ class AEDataService {
           tokenData.accessToken &&
           typeof tokenData.expires === "string"
         ) {
-        if (
-          tokenData &&
-          tokenData.accessToken &&
-          typeof tokenData.expires === "string"
-        ) {
           this.cachedToken = tokenData.accessToken;
           this.tokenExpiration = new Date(tokenData.expires).getTime();
           return this.cachedToken;
         }
         throw new Error("Token data is missing the accessToken property");
-        throw new Error("Token data is missing the accessToken property");
       } catch (error) {
-        this.handleError("fetchToken", error);
         this.handleError("fetchToken", error);
         if (retries === AEDataService.MAX_RETRIES - 1) {
           throw error;
@@ -187,14 +156,8 @@ class AEDataService {
         options,
         true
       );
-      const userCustomInstructions = await this.fetchData(
-        AEDataService.CI_ENDPOINT,
-        options,
-        true
-      );
       return userCustomInstructions;
     } catch (error) {
-      handleError("getUserCustomInstructions", error);
       handleError("getUserCustomInstructions", error);
     }
   }
@@ -205,24 +168,18 @@ class AEDataService {
         AEDataService.CI_ENDPOINT,
         {
           method: "POST",
-          method: "POST",
           headers: this.defaultHeaders,
           body: JSON.stringify(data),
         },
-        true
         true
       );
       if (response.error) {
         throw new Error(
           `Failed to update custom instructions: ${response.error}`
         );
-        throw new Error(
-          `Failed to update custom instructions: ${response.error}`
-        );
       }
       return response;
     } catch (error) {
-      handleError("updateCustomInstructions", error);
       handleError("updateCustomInstructions", error);
     }
   }
@@ -238,7 +195,6 @@ const aeDataService = new AEDataService(BASE_URL);
 
 function createDomElementFromHTML(htmlString) {
   const tempDiv = document.createElement("div");
-  const tempDiv = document.createElement("div");
   tempDiv.innerHTML = htmlString;
   return tempDiv.firstElementChild;
 }
@@ -246,15 +202,11 @@ function createDomElementFromHTML(htmlString) {
 async function setup() {
   const userCustomInstructions =
     await aeDataService.getUserCustomInstructions();
-  const userCustomInstructions =
-    await aeDataService.getUserCustomInstructions();
 
   function downloadJson(variable, filename) {
     const jsonString = JSON.stringify(variable, null, 2);
     const blob = new Blob([jsonString], { type: "application/json" });
-    const blob = new Blob([jsonString], { type: "application/json" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
     const a = document.createElement("a");
     a.href = url;
     a.download = filename;
@@ -300,20 +252,13 @@ async function setup() {
 
     const button = createDomElementFromHTML(buttonHtml);
     button.addEventListener("click", buttonData.handler, true);
-    button.addEventListener("click", buttonData.handler, true);
     return button;
   }
 
   async function updateLimitText() {
     if (document.getElementById("prompt-textarea")) {
-    if (document.getElementById("prompt-textarea")) {
       try {
         const options = {};
-        const data = await aeDataService.fetchData(
-          GPT4_LIMIT_ENDPOINT,
-          options,
-          true
-        );
         const data = await aeDataService.fetchData(
           GPT4_LIMIT_ENDPOINT,
           options,
@@ -324,7 +269,6 @@ async function setup() {
           limitText.innerText = data.message_disclaimer.textarea;
         }
       } catch (error) {
-        handleError("updateLimitText", error);
         handleError("updateLimitText", error);
       }
     }
@@ -355,7 +299,6 @@ async function setup() {
           window.location.reload(true);
         } catch (error) {
           handleError("handleToggleClick", error);
-          handleError("handleToggleClick", error);
         }
       },
     },
@@ -371,12 +314,7 @@ async function setup() {
             userCustomInstructions,
             DEBUG_CUSTOM_INSTRUCTIONS_FILENAME
           );
-          downloadJson(
-            userCustomInstructions,
-            DEBUG_CUSTOM_INSTRUCTIONS_FILENAME
-          );
         } catch (error) {
-          handleError("handleDownloadDataClick", error);
           handleError("handleDownloadDataClick", error);
         }
       },
@@ -388,7 +326,6 @@ async function setup() {
         '<svg width="18" height="18" viewBox="0 0 448 512" fill="none"><path fill="currentColor" d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0h120.4c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64s14.3-32 32-32h96l7.2-14.3zM32 128h384v320c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"/></svg>',
       hideForGPTs: false,
       handler: () => {
-        debugPanel.innerHTML = "";
         debugPanel.innerHTML = "";
         messages = new Map();
       },
@@ -526,18 +463,11 @@ function render(key, value) {
           value = `${content.title} (${content.url})\n${escapeHtml(
             content.text
           )}`;
-        case "tether_quote":
-          label = "Quote";
-          value = `${content.title} (${content.url})\n${escapeHtml(
-            content.text
-          )}`;
           break;
         case "tether_browsing_display":
           label = "Browser";
           value = content.results;
           break;
-        case "text":
-          label = "Reply";
         case "text":
           label = "Reply";
           value = escapeHtml(part);
@@ -573,8 +503,6 @@ function render(key, value) {
 async function decodeEventStream(event) {
   const events = new TextDecoder().decode(event);
   events
-    .replace(/^data: /, "")
-    .split("\n")
     .replace(/^data: /, "")
     .split("\n")
     .filter(Boolean)
@@ -618,14 +546,9 @@ window.fetch = async (...args) => {
   if (
     response.headers.get("content-type") === "text/event-stream; charset=utf-8"
   ) {
-  if (
-    response.headers.get("content-type") === "text/event-stream; charset=utf-8"
-  ) {
     logEventStream(response.clone());
   }
   return response;
 };
 
 setup();
-
-document.messages = messages;
