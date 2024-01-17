@@ -149,6 +149,7 @@
     });
 
     const disableBtn = createButton({
+      title: "Disable Instructions",
       id: "ae_disable",
       emoji: "🚫"
     });
